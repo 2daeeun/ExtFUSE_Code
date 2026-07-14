@@ -1,0 +1,8 @@
+tree 500a56d0fd38f2ed1d8c82271d54abbaf1777499
+parent f945fbc0b6ba9c9291229f6e209d82168908cc94
+author Ashish Bijlani <ashish.bijlani@gmail.com> 1595695377 -0500
+committer Ashish Bijlani <ashish.bijlani@gmail.com> 1595695377 -0500
+
+Synchronize fuse_init_out with current kernel master
+
+Signed-off-by: Ashish Bijlani <ashish.bijlani@gmail.com>

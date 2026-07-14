@@ -1,0 +1,8 @@
+tree e9558a154b37d30cad11af047eaad622a7fcab4c
+parent 5c8601d74527bc42d2a6b5c31443eda00b9c9fad
+author Ashish Bijlani <ashish.bijlani@gatech.edu> 1579464193 -0600
+committer Ashish Bijlani <ashish.bijlani@gatech.edu> 1579464193 -0600
+
+Add instructions to test ExtFUSE using StackFS
+
+Signed-off-by: Ashish Bijlani <ashish.bijlani@gatech.edu>

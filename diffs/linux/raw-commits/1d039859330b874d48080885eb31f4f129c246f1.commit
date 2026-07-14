@@ -1,0 +1,34 @@
+tree 5988dc49e1534ec6e1fadca6c5b5231248a63b41
+parent 0c85ce135456a3927f552e738f730c47ac905ac3
+parent e4557c1a46b0d32746bd309e1941914b5a6912b4
+author Linus Torvalds <torvalds@linux-foundation.org> 1563129633 -0700
+committer Linus Torvalds <torvalds@linux-foundation.org> 1563129633 -0700
+
+Merge branch 'perf-urgent-for-linus' of git://git.kernel.org/pub/scm/linux/kernel/git/tip/tip
+
+Pull perf fixes from Ingo Molnar:
+ "A number of PMU driver corner case fixes, a race fix, an event
+  grouping fix, plus a bunch of tooling fixes/updates"
+
+* 'perf-urgent-for-linus' of git://git.kernel.org/pub/scm/linux/kernel/git/tip/tip: (30 commits)
+  perf/x86/intel: Fix spurious NMI on fixed counter
+  perf/core: Fix exclusive events' grouping
+  perf/x86/amd/uncore: Set the thread mask for F17h L3 PMCs
+  perf/x86/amd/uncore: Do not set 'ThreadMask' and 'SliceMask' for non-L3 PMCs
+  perf/core: Fix race between close() and fork()
+  perf intel-pt: Fix potential NULL pointer dereference found by the smatch tool
+  perf intel-bts: Fix potential NULL pointer dereference found by the smatch tool
+  perf script: Assume native_arch for pipe mode
+  perf scripts python: export-to-sqlite.py: Fix DROP VIEW power_events_view
+  perf scripts python: export-to-postgresql.py: Fix DROP VIEW power_events_view
+  perf hists browser: Fix potential NULL pointer dereference found by the smatch tool
+  perf cs-etm: Fix potential NULL pointer dereference found by the smatch tool
+  perf parse-events: Remove unused variable: error
+  perf parse-events: Remove unused variable 'i'
+  perf metricgroup: Add missing list_del_init() when flushing egroups list
+  perf tools: Use list_del_init() more thorougly
+  perf tools: Use zfree() where applicable
+  tools lib: Adopt zalloc()/zfree() from tools/perf
+  perf tools: Move get_current_dir_name() cond prototype out of util.h
+  perf namespaces: Move the conditional setns() prototype to namespaces.h
+  ...

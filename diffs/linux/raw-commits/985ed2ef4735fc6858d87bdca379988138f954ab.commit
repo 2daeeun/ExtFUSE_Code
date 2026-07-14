@@ -1,0 +1,11 @@
+tree f21417b03b84052349bd5ca9b217498d1f2515f8
+parent b7923d63a0e50b1dbbb71b932ab2c9802d18e28a
+author Alessio Balsini <balsini@android.com> 1587654991 +0100
+committer Alessio Balsini <balsini@android.com> 1587658128 +0100
+
+ExtFUSE: update code style
+
+Adjust indentation and code style of ExtFUSE code to be compatible with
+the style policies of the Linux kernel.
+
+Signed-off-by: Alessio Balsini <balsini@android.com>

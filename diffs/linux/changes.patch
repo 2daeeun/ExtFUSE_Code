@@ -1,0 +1,727 @@
+diff --git a/Documentation/filesystems/extfuse.txt b/Documentation/filesystems/extfuse.txt
+new file mode 100644
+index 0000000000000000000000000000000000000000..8a745c5d22d7d8131155ab2ae2437bce202612a1
+--- /dev/null
++++ b/Documentation/filesystems/extfuse.txt
+@@ -0,0 +1,4 @@
++ExtFUSE: Extension Framework for FUSE
++
++ExtFUSE allows developers to register BPF code with the FUSE driver to
++handle file system requests in the kernel.
+diff --git a/MAINTAINERS b/MAINTAINERS
+index 211ea3a199bd6eda3fccd794d86d140c6ee1ecf3..3b0cae754b30d09b0ba154b5f6aed3d852e896ac 100644
+--- a/MAINTAINERS
++++ b/MAINTAINERS
+@@ -6090,6 +6090,15 @@ F:	include/linux/efi*.h
+ F:	arch/arm/boot/compressed/efi-header.S
+ F:	arch/arm64/kernel/efi-entry.S
+ 
++EXTFUSE: EXTENSION FRAMEWORK FOR FUSE
++M:	Ashish Bijlani <ashish.bijlani@gmail.edu>
++W:	https://extfuse.github.io
++T:	git https://github.com/extfuse/linux.git
++S:	Maintained
++F:	fs/fuse/extfuse*
++F:	include/linux/extfuse.h
++F:	Documentation/filesystems/extfuse.txt
++
+ EXTERNAL CONNECTOR SUBSYSTEM (EXTCON)
+ M:	MyungJoo Ham <myungjoo.ham@samsung.com>
+ M:	Chanwoo Choi <cw00.choi@samsung.com>
+diff --git a/fs/fuse/Kconfig b/fs/fuse/Kconfig
+index 24fc5a5c1b97c7d5a05a458d73d9f7ea5a97586f..866ffff895992ae24ae71f5ac9ee8eb01bfe1bcf 100644
+--- a/fs/fuse/Kconfig
++++ b/fs/fuse/Kconfig
+@@ -18,6 +18,17 @@ config FUSE_FS
+ 	  If you want to develop a userspace FS, or if you want to use
+ 	  a filesystem based on FUSE, answer Y or M.
+ 
++config EXTFUSE
++	bool "Extension framework for FUSE"
++	depends on FUSE_FS && BPF_SYSCALL
++	help
++	  This allows applications to load BPF code into the kernel
++	  for caching metadata operations, such as get(x)attr, lookup, etc.
++
++	  See Documentation/filesystems/extfuse for further information.
++
++	  If you are unsure how to answer this question, answer N.
++
+ config CUSE
+ 	tristate "Character device in Userspace support"
+ 	depends on FUSE_FS
+diff --git a/fs/fuse/Makefile b/fs/fuse/Makefile
+index 9485019c2a142bd2903bbc48061d996164e47cff..208b19aab37fb0540fd6a4e4d31935d3ee8d9370 100644
+--- a/fs/fuse/Makefile
++++ b/fs/fuse/Makefile
+@@ -5,5 +5,6 @@
+ 
+ obj-$(CONFIG_FUSE_FS) += fuse.o
+ obj-$(CONFIG_CUSE) += cuse.o
++obj-$(CONFIG_EXTFUSE) += extfuse.o
+ 
+ fuse-objs := dev.o dir.o file.o inode.o control.o xattr.o acl.o readdir.o
+diff --git a/fs/fuse/dev.c b/fs/fuse/dev.c
+index ea8237513dfaf3342079ded75a4f562a4de339b6..9d7ee44ca73f814bdccc0b19db9c6f92ac0e0cae 100644
+--- a/fs/fuse/dev.c
++++ b/fs/fuse/dev.c
+@@ -7,6 +7,7 @@
+ */
+ 
+ #include "fuse_i.h"
++#include "extfuse_i.h"
+ 
+ #include <linux/init.h>
+ #include <linux/module.h>
+@@ -579,6 +580,8 @@ static void __fuse_request_send(struct fuse_conn *fc, struct fuse_req *req)
+ 
+ void fuse_request_send(struct fuse_conn *fc, struct fuse_req *req)
+ {
++	if (extfuse_request_send(fc, req) != -ENOSYS)
++		return;
+ 	__set_bit(FR_ISREPLY, &req->flags);
+ 	if (!test_bit(FR_WAITING, &req->flags)) {
+ 		__set_bit(FR_WAITING, &req->flags);
+diff --git a/fs/fuse/extfuse.c b/fs/fuse/extfuse.c
+new file mode 100644
+index 0000000000000000000000000000000000000000..c8f05f386a791acc06cff5a48002df195b15bcff
+--- /dev/null
++++ b/fs/fuse/extfuse.c
+@@ -0,0 +1,330 @@
++#include "extfuse_i.h"
++
++#undef pr_fmt
++#define pr_fmt(fmt) "ExtFUSE: " fmt
++
++/* create a copy of args for extfuse request handlers */
++static void fuse_to_extfuse_req(struct fuse_req *req, struct extfuse_req *ereq)
++{
++	ereq->in.h.opcode = req->in.h.opcode;
++	ereq->in.h.nodeid = req->in.h.nodeid;
++	ereq->in.numargs = req->in.numargs;
++	memcpy(ereq->in.args, req->in.args,
++	       req->in.numargs * sizeof(struct fuse_in_arg));
++	ereq->out.argvar = req->out.argvar;
++	ereq->out.numargs = req->out.numargs;
++	memcpy(ereq->out.args, req->out.args,
++	       req->out.numargs * sizeof(struct fuse_arg));
++}
++
++/* only copy out args */
++static void extfuse_to_fuse_req(struct extfuse_req *ereq, struct fuse_req *req)
++{
++	req->out.argvar = ereq->out.argvar;
++	req->out.numargs = ereq->out.numargs;
++	memcpy(req->out.args, ereq->out.args,
++	       ereq->out.numargs * sizeof(struct fuse_arg));
++}
++
++static int extfuse_run_prog(struct bpf_prog *eprog, struct extfuse_req *ereq)
++{
++	int ret = -ENOSYS;
++	struct bpf_prog *prog;
++
++	prog = READ_ONCE(eprog);
++	if (prog) {
++		/* run program */
++		rcu_read_lock();
++		ret = BPF_PROG_RUN(prog, ereq);
++		rcu_read_unlock();
++	}
++
++	return ret;
++}
++
++int extfuse_request_send(struct fuse_conn *fc, struct fuse_req *req)
++{
++	struct extfuse_data *data = (struct extfuse_data *)fc->fc_priv;
++	ssize_t ret = -ENOSYS;
++
++	if (data) {
++		struct extfuse_req ereq;
++		fuse_to_extfuse_req(req, &ereq);
++		ret = extfuse_run_prog(data->prog, &ereq);
++		if (ret != -ENOSYS) {
++			extfuse_to_fuse_req(&ereq, req);
++			req->out.h.error = (int)ret;
++			ret = 0;
++		}
++	}
++
++	return ret;
++}
++
++void extfuse_unload_prog(struct fuse_conn *fc)
++{
++	struct extfuse_data *data = (struct extfuse_data *)fc->fc_priv;
++
++	if (data) {
++		struct bpf_prog *old_prog;
++		old_prog = xchg(&data->prog, NULL);
++		if (old_prog) {
++			bpf_prog_put(old_prog);
++			pr_info("ExtFUSE bpf prog unloaded\n");
++		}
++		kfree(data);
++		fc->fc_priv = NULL;
++	}
++}
++
++int extfuse_load_prog(struct fuse_conn *fc, int fd)
++{
++	struct bpf_prog *prog = NULL;
++	struct bpf_prog *old_prog;
++	struct extfuse_data *data;
++
++	BUG_ON(fc->fc_priv);
++
++	data = kmalloc(sizeof(*data), GFP_KERNEL);
++	if (!data)
++		return -ENOMEM;
++
++	prog = bpf_prog_get_type(fd, BPF_PROG_TYPE_EXTFUSE);
++	if (IS_ERR(prog)) {
++		pr_err("ExtFUSE bpf prog fd=%d failed: %ld\n", fd,
++		       PTR_ERR(prog));
++		kfree(data);
++		return -1;
++	}
++
++	old_prog = xchg(&data->prog, prog);
++	if (old_prog)
++		bpf_prog_put(old_prog);
++
++	fc->fc_priv = (void *)data;
++
++	pr_info("ExtFUSE bpf prog loaded fd=%d\n", fd);
++	return 0;
++}
++
++/**
++ * int bpf_extfuse_read_args(): attempts to copy the requested src field to dst.
++ * @src: a pointer to a extfuse_req data structure
++ * @type: Specifies what field of the src data structure to be copied to dst
++ * @dst: a pointer to the container that will be filled with the requested data
++ * @size: size of the data chunk to be copied to dst
++ */
++BPF_CALL_4(bpf_extfuse_read_args, void *, src, u32, type, void *, dst, size_t,
++	   size)
++{
++	struct extfuse_req *req = (struct extfuse_req *)src;
++	unsigned num_in_args = req->in.numargs;
++	unsigned num_out_args = req->out.numargs;
++	const void *inptr = NULL;
++	int ret = -EINVAL;
++
++	switch (type) {
++	case OPCODE:
++		if (size != sizeof(uint32_t))
++			return -EINVAL;
++		inptr = (void *)&req->in.h.opcode;
++		break;
++	case NODEID:
++		if (size != sizeof(uint64_t))
++			return -EINVAL;
++		inptr = (void *)&req->in.h.nodeid;
++		break;
++	case NUM_IN_ARGS:
++		if (size != sizeof(unsigned))
++			return -EINVAL;
++		inptr = (void *)&req->in.numargs;
++		break;
++	case NUM_OUT_ARGS:
++		if (size != sizeof(unsigned))
++			return -EINVAL;
++		inptr = (void *)&req->out.numargs;
++		break;
++	case IN_PARAM_0_SIZE:
++		if (size != sizeof(unsigned) || num_in_args < 1 ||
++		    num_in_args > 3)
++			return -EINVAL;
++		inptr = &req->in.args[0].size;
++		break;
++	case IN_PARAM_0_VALUE:
++		if (num_in_args < 1 || num_in_args > 3)
++			return -EINVAL;
++		if (size < req->in.args[0].size)
++			return -E2BIG;
++		size = req->in.args[0].size;
++		inptr = req->in.args[0].value;
++		break;
++	case IN_PARAM_1_SIZE:
++		if (size != sizeof(unsigned) || num_in_args < 2 ||
++		    num_in_args > 3)
++			return -EINVAL;
++		inptr = &req->in.args[1].size;
++		break;
++	case IN_PARAM_1_VALUE:
++		if (num_in_args < 2 || num_in_args > 3)
++			return -EINVAL;
++		if (size < req->in.args[1].size)
++			return -E2BIG;
++		size = req->in.args[1].size;
++		inptr = req->in.args[1].value;
++		break;
++	case IN_PARAM_2_SIZE:
++		if (size != sizeof(unsigned) || num_in_args != 3)
++			return -EINVAL;
++		inptr = &req->in.args[2].size;
++		break;
++	case IN_PARAM_2_VALUE:
++		if (num_in_args != 3)
++			return -EINVAL;
++		if (size < req->in.args[2].size)
++			return -E2BIG;
++		size = req->in.args[2].size;
++		inptr = req->in.args[2].value;
++		break;
++	case OUT_PARAM_0:
++		if (num_out_args < 1 || num_out_args > 2)
++			return -EINVAL;
++		if (size != req->out.args[0].size)
++			return -E2BIG;
++		inptr = req->out.args[0].value;
++		break;
++	case OUT_PARAM_1:
++		if (num_out_args != 2)
++			return -EINVAL;
++		if (size != req->out.args[1].size)
++			return -E2BIG;
++		inptr = req->out.args[1].value;
++		break;
++	default:
++		return -EBADRQC;
++		break;
++	}
++
++	if (!inptr) {
++		pr_err("Invalid input to %s type: %d num_in_args: %d "
++		       "num_out_args: %d size: %ld\n",
++		       __func__, type, num_in_args, num_out_args, size);
++		return ret;
++	}
++
++	ret = probe_kernel_read(dst, inptr, size);
++	if (unlikely(ret < 0))
++		memset(dst, 0, size);
++
++	return ret;
++}
++
++static const struct bpf_func_proto bpf_extfuse_read_args_proto = {
++	.func		= bpf_extfuse_read_args,
++	.gpl_only	= true,
++	.ret_type	= RET_INTEGER,
++	.arg1_type	= ARG_PTR_TO_CTX,
++	.arg2_type	= ARG_ANYTHING, //ARG_CONST_SIZE_OR_ZERO,
++	.arg3_type	= ARG_PTR_TO_UNINIT_MEM,
++	.arg4_type	= ARG_CONST_SIZE,
++};
++
++/**
++ * int bpf_extfuse_write_args(): attempts to copy the src field to dst.
++ * @src: a pointer to a extfuse_req data structure
++ * @type: Specifies what field of the src data structure to be copied to dst
++ * @dst: a pointer to the container that will be filled with the requested data
++ * @size: size of the data chunk to be copied to dst
++ */
++BPF_CALL_4(bpf_extfuse_write_args, void *, dst, u32, type, const void *, src,
++	   u32, size)
++{
++	struct extfuse_req *req = (struct extfuse_req *)dst;
++	unsigned numargs = req->out.numargs;
++	void *outptr = NULL;
++	int ret = -EINVAL;
++
++	if (type == OUT_PARAM_0 && numargs >= 1 && numargs <= 2 &&
++	    size == req->out.args[0].size)
++		outptr = req->out.args[0].value;
++
++	else if (type == OUT_PARAM_1 && numargs == 2 &&
++		 size == req->out.args[1].size)
++		outptr = req->out.args[1].value;
++
++	if (!outptr) {
++		pr_debug("Invalid input to %s type: %d "
++			 "num_args: %d size: %d\n",
++			 __func__, type, numargs, size);
++		return ret;
++	}
++
++	ret = probe_kernel_write(outptr, src, size);
++	if (unlikely(ret < 0))
++		memset(outptr, 0, size);
++
++	return ret;
++}
++
++static const struct bpf_func_proto bpf_extfuse_write_args_proto = {
++	.func		= bpf_extfuse_write_args,
++	.gpl_only	= true,
++	.ret_type	= RET_INTEGER,
++	.arg1_type	= ARG_PTR_TO_CTX,
++	.arg2_type	= ARG_ANYTHING, //ARG_CONST_SIZE_OR_ZERO,
++	.arg3_type	= ARG_PTR_TO_MEM,
++	.arg4_type	= ARG_CONST_SIZE,
++};
++
++static const struct bpf_func_proto *
++bpf_extfuse_func_proto(enum bpf_func_id func_id, const struct bpf_prog *prog)
++{
++	switch (func_id) {
++	case BPF_FUNC_extfuse_read_args:
++		return &bpf_extfuse_read_args_proto;
++	case BPF_FUNC_extfuse_write_args:
++		return &bpf_extfuse_write_args_proto;
++	case BPF_FUNC_map_lookup_elem:
++		return &bpf_map_lookup_elem_proto;
++	case BPF_FUNC_map_update_elem:
++		return &bpf_map_update_elem_proto;
++	case BPF_FUNC_map_delete_elem:
++		return &bpf_map_delete_elem_proto;
++	case BPF_FUNC_tail_call:
++		return &bpf_tail_call_proto;
++	case BPF_FUNC_trace_printk:
++		return bpf_get_trace_printk_proto();
++	default:
++		return NULL;
++	}
++}
++
++/* bpf+fuse programs can access fields of 'struct pt_regs' */
++static bool bpf_extfuse_is_valid_access(int off, int size,
++					enum bpf_access_type type,
++					const struct bpf_prog *prog,
++					struct bpf_insn_access_aux *info)
++{
++	if (off < 0 || off >= sizeof(struct fuse_args))
++		return false;
++	if (type != BPF_READ)
++		return false;
++	if (off % size != 0)
++		return false;
++	/*
++	 * Assertion for 32 bit to make sure last 8 byte access
++	 * (BPF_DW) to the last 4 byte member is disallowed.
++	 */
++	if (off + size > sizeof(struct fuse_args))
++		return false;
++
++	return true;
++}
++
++const struct bpf_verifier_ops extfuse_verifier_ops = {
++	.get_func_proto = bpf_extfuse_func_proto,
++	.is_valid_access = bpf_extfuse_is_valid_access,
++};
++
++const struct bpf_prog_ops extfuse_prog_ops = {
++	.test_run = NULL,
++};
+diff --git a/fs/fuse/extfuse_i.h b/fs/fuse/extfuse_i.h
+new file mode 100644
+index 0000000000000000000000000000000000000000..05111a17d55debb7aaeb9c1a9b2c4c17c9d6eb28
+--- /dev/null
++++ b/fs/fuse/extfuse_i.h
+@@ -0,0 +1,85 @@
++#ifndef _EXTFUSE_I_H
++#define _EXTFUSE_I_H
++
++#include <asm-generic/errno.h>
++
++#ifdef CONFIG_EXTFUSE
++
++#include "fuse_i.h"
++
++#include <linux/bpf.h>
++#include <linux/extfuse.h>
++#include <linux/filter.h>
++
++struct extfuse_data {
++	struct bpf_prog *prog;
++};
++
++/** The request input */
++struct extfuse_in {
++	/** The request header */
++	struct fuse_in_header h;
++
++	/** Number of arguments */
++	unsigned numargs;
++
++	/** Array of arguments */
++	struct fuse_in_arg args[3];
++};
++
++/** The request output */
++struct extfuse_out {
++	/** Header returned from userspace */
++	struct fuse_out_header h;
++
++	/** Last argument is variable length (can be shorter than
++	    arg->size) */
++	unsigned argvar : 1;
++
++	/** Number or arguments */
++	unsigned numargs;
++
++	/** Array of arguments */
++	struct fuse_arg args[2];
++};
++
++struct extfuse_req {
++	/** The request input */
++	struct extfuse_in in;
++
++	/** The request output */
++	struct extfuse_out out;
++};
++
++#define EXTFUSE_ERROR(x)	(x < 0 && x != -ENOSYS)
++#define EXTFUSE_UPCALL(x)	(x == -ENOSYS)
++#define EXTFUSE_PASSTHRU(x)	(x > 0)
++#define EXTFUSE_RETURN(x)	(x == 0)
++
++#define EXTFUSE_FLAGS		FUSE_FS_EXTFUSE
++
++extern int extfuse_load_prog(struct fuse_conn *fc, int fd);
++extern void extfuse_unload_prog(struct fuse_conn *fc);
++extern int extfuse_request_send(struct fuse_conn *fc, struct fuse_req *req);
++#else
++
++#define EXTFUSE_FLAGS		0
++
++static inline int extfuse_load_prog(struct fuse_conn *fc, int fd)
++{
++	return -ENOSYS;
++}
++
++static inline void extfuse_unload_prog(struct fuse_conn *fc)
++{
++	return;
++}
++
++static inline int extfuse_request_send(struct fuse_conn *fc,
++				       struct fuse_req *req)
++{
++	return -ENOSYS;
++}
++#endif /* CONFIG_EXTFUSE */
++
++#endif /* _EXTFUSE_H */
+diff --git a/fs/fuse/fuse_i.h b/fs/fuse/fuse_i.h
+index 24dbca777775130536b97b984e4348e9068230d6..bafc08d2db2c60ae7ff7e8d404305b4ca866795e 100644
+--- a/fs/fuse/fuse_i.h
++++ b/fs/fuse/fuse_i.h
+@@ -759,6 +759,9 @@ struct fuse_conn {
+ 
+ 	/** List of device instances belonging to this connection */
+ 	struct list_head devices;
++
++	/* priv data, used by extfuse */
++	void *fc_priv;
+ };
+ 
+ static inline struct fuse_conn *get_fuse_conn_super(struct super_block *sb)
+diff --git a/fs/fuse/inode.c b/fs/fuse/inode.c
+index 4bb885b0f03224e9f793612ea05f74c1d9c0038e..fa0cbd49706c50fb13a9f3b5dc7ee18a9e7d9c00 100644
+--- a/fs/fuse/inode.c
++++ b/fs/fuse/inode.c
+@@ -7,6 +7,7 @@
+ */
+ 
+ #include "fuse_i.h"
++#include "extfuse_i.h"
+ 
+ #include <linux/pagemap.h>
+ #include <linux/slab.h>
+@@ -944,6 +945,9 @@ static void process_init_reply(struct fuse_conn *fc, struct fuse_req *req)
+ 			fc->no_flock = 1;
+ 		}
+ 
++		if (arg->flags & FUSE_FS_EXTFUSE)
++			extfuse_load_prog(fc, arg->extfuse_prog_fd);
++
+ 		fc->sb->s_bdi->ra_pages =
+ 				min(fc->sb->s_bdi->ra_pages, ra_pages);
+ 		fc->minor = arg->minor;
+@@ -970,7 +974,9 @@ static void fuse_send_init(struct fuse_conn *fc, struct fuse_req *req)
+ 		FUSE_WRITEBACK_CACHE | FUSE_NO_OPEN_SUPPORT |
+ 		FUSE_PARALLEL_DIROPS | FUSE_HANDLE_KILLPRIV | FUSE_POSIX_ACL |
+ 		FUSE_ABORT_ERROR | FUSE_MAX_PAGES | FUSE_CACHE_SYMLINKS |
+-		FUSE_NO_OPENDIR_SUPPORT | FUSE_EXPLICIT_INVAL_DATA;
++		FUSE_NO_OPENDIR_SUPPORT | FUSE_EXPLICIT_INVAL_DATA |
++		EXTFUSE_FLAGS;
++
+ 	req->in.h.opcode = FUSE_INIT;
+ 	req->in.numargs = 1;
+ 	req->in.args[0].size = sizeof(*arg);
+diff --git a/include/linux/bpf_types.h b/include/linux/bpf_types.h
+index eec5aeeeaf928bc044e1a2f5602a0ec1e3c577f2..433f0d8fa8aaa5daa1bbb714fa03248ba14e486d 100644
+--- a/include/linux/bpf_types.h
++++ b/include/linux/bpf_types.h
+@@ -77,3 +77,6 @@ BPF_MAP_TYPE(BPF_MAP_TYPE_REUSEPORT_SOCKARRAY, reuseport_array_ops)
+ #endif
+ BPF_MAP_TYPE(BPF_MAP_TYPE_QUEUE, queue_map_ops)
+ BPF_MAP_TYPE(BPF_MAP_TYPE_STACK, stack_map_ops)
++#ifdef CONFIG_EXTFUSE
++BPF_PROG_TYPE(BPF_PROG_TYPE_EXTFUSE, extfuse)
++#endif
+diff --git a/include/uapi/linux/bpf.h b/include/uapi/linux/bpf.h
+index 6f68438aa4edd98114b825f1aaf036115e5c728a..5c0b78fd5b62e56690aea0ee63e29b5158276cc2 100644
+--- a/include/uapi/linux/bpf.h
++++ b/include/uapi/linux/bpf.h
+@@ -171,6 +171,7 @@ enum bpf_prog_type {
+ 	BPF_PROG_TYPE_CGROUP_SYSCTL,
+ 	BPF_PROG_TYPE_RAW_TRACEPOINT_WRITABLE,
+ 	BPF_PROG_TYPE_CGROUP_SOCKOPT,
++	BPF_PROG_TYPE_EXTFUSE,
+ };
+ 
+ enum bpf_attach_type {
+@@ -2824,7 +2825,9 @@ union bpf_attr {
+ 	FN(strtoul),			\
+ 	FN(sk_storage_get),		\
+ 	FN(sk_storage_delete),		\
+-	FN(send_signal),
++	FN(send_signal),		\
++	FN(extfuse_read_args),		\
++	FN(extfuse_write_args),
+ 
+ /* integer value in 'imm' field of BPF_CALL instruction selects which helper
+  * function eBPF program intends to call
+diff --git a/include/uapi/linux/extfuse.h b/include/uapi/linux/extfuse.h
+new file mode 100644
+index 0000000000000000000000000000000000000000..af9ecd71123e8630702f2066b24bb12830cd1b53
+--- /dev/null
++++ b/include/uapi/linux/extfuse.h
+@@ -0,0 +1,19 @@
++#ifndef _LINUX_EXTFUSE_H
++#define _LINUX_EXTFUSE_H
++
++typedef enum {
++	OPCODE = 0,
++	NODEID,
++	NUM_IN_ARGS,
++	NUM_OUT_ARGS,
++	IN_PARAM_0_SIZE,
++	IN_PARAM_0_VALUE,
++	IN_PARAM_1_SIZE,
++	IN_PARAM_1_VALUE,
++	IN_PARAM_2_SIZE,
++	IN_PARAM_2_VALUE,
++	OUT_PARAM_0,
++	OUT_PARAM_1,
++} extfuse_arg_t;
++
++#endif /* _LINUX_EXTFUSE_H */
+diff --git a/include/uapi/linux/fuse.h b/include/uapi/linux/fuse.h
+index 2971d29a42e4a46892ede858e3910ac2a4a45498..cafb8433e113d6ebacb6502cac9c11b21eb707a1 100644
+--- a/include/uapi/linux/fuse.h
++++ b/include/uapi/linux/fuse.h
+@@ -301,6 +301,7 @@ struct fuse_file_lock {
+ #define FUSE_CACHE_SYMLINKS	(1 << 23)
+ #define FUSE_NO_OPENDIR_SUPPORT (1 << 24)
+ #define FUSE_EXPLICIT_INVAL_DATA (1 << 25)
++#define FUSE_FS_EXTFUSE		(1 << 26)
+ 
+ /**
+  * CUSE INIT request/reply flags
+@@ -653,7 +654,8 @@ struct fuse_init_out {
+ 	uint32_t	time_gran;
+ 	uint16_t	max_pages;
+ 	uint16_t	padding;
+-	uint32_t	unused[8];
++	uint32_t	extfuse_prog_fd;
++	uint32_t	unused[7];
+ };
+ 
+ #define CUSE_INIT_INFO_MAX 4096
+diff --git a/samples/bpf/bpf_load.c b/samples/bpf/bpf_load.c
+index 4574b1939e49b137d9086ec719080d6cd73c91ef..3bed0ff57ae66759c1ba36784c1c5ebbb02e018a 100644
+--- a/samples/bpf/bpf_load.c
++++ b/samples/bpf/bpf_load.c
+@@ -87,6 +87,7 @@ static int load_and_attach(const char *event, struct bpf_insn *prog, int size)
+ 	bool is_sockops = strncmp(event, "sockops", 7) == 0;
+ 	bool is_sk_skb = strncmp(event, "sk_skb", 6) == 0;
+ 	bool is_sk_msg = strncmp(event, "sk_msg", 6) == 0;
++	bool is_extfuse = strncmp(event, "extfuse", 7) == 0;
+ 	size_t insns_cnt = size / sizeof(struct bpf_insn);
+ 	enum bpf_prog_type prog_type;
+ 	char buf[256];
+@@ -120,6 +121,8 @@ static int load_and_attach(const char *event, struct bpf_insn *prog, int size)
+ 		prog_type = BPF_PROG_TYPE_SK_SKB;
+ 	} else if (is_sk_msg) {
+ 		prog_type = BPF_PROG_TYPE_SK_MSG;
++	} else if (is_extfuse) {
++		prog_type = BPF_PROG_TYPE_EXTFUSE;
+ 	} else {
+ 		printf("Unknown event '%s'\n", event);
+ 		return -1;
+@@ -140,6 +143,20 @@ static int load_and_attach(const char *event, struct bpf_insn *prog, int size)
+ 	if (is_xdp || is_perf_event || is_cgroup_skb || is_cgroup_sk)
+ 		return 0;
+ 
++	if (is_extfuse) {
++		int sign = 1;
++		event += 7;
++		if (*event != '/')
++			return 0;
++		event++;
++		printf("loading extfuse prog event %s\n", event);
++		if (!isdigit(*event)) {
++			printf("invalid prog number\n");
++			return -1;
++		}
++		return populate_prog_array(event, fd);
++	}
++
+ 	if (is_socket || is_sockops || is_sk_skb || is_sk_msg) {
+ 		if (is_socket)
+ 			event += 6;
+@@ -643,6 +660,7 @@ static int do_load_bpf_file(const char *path, fixup_map_cb fixup_map)
+ 		    memcmp(shname, "cgroup/", 7) == 0 ||
+ 		    memcmp(shname, "sockops", 7) == 0 ||
+ 		    memcmp(shname, "sk_skb", 6) == 0 ||
++		    memcmp(shname, "extfuse", 7) == 0 ||
+ 		    memcmp(shname, "sk_msg", 6) == 0) {
+ 			ret = load_and_attach(shname, data->d_buf,
+ 					      data->d_size);
+diff --git a/tools/include/uapi/linux/bpf.h b/tools/include/uapi/linux/bpf.h
+index f506c68b26127cd5b6c54f2b04106e2f7368f2ee..8a58e0a36c15974b4ca2c2e0079be2f62d02a03d 100644
+--- a/tools/include/uapi/linux/bpf.h
++++ b/tools/include/uapi/linux/bpf.h
+@@ -171,6 +171,7 @@ enum bpf_prog_type {
+ 	BPF_PROG_TYPE_CGROUP_SYSCTL,
+ 	BPF_PROG_TYPE_RAW_TRACEPOINT_WRITABLE,
+ 	BPF_PROG_TYPE_CGROUP_SOCKOPT,
++	BPF_PROG_TYPE_EXTFUSE,
+ };
+ 
+ enum bpf_attach_type {
+@@ -2821,7 +2822,9 @@ union bpf_attr {
+ 	FN(strtoul),			\
+ 	FN(sk_storage_get),		\
+ 	FN(sk_storage_delete),		\
+-	FN(send_signal),
++	FN(send_signal),		\
++	FN(extfuse_read_args),		\
++	FN(extfuse_write_args),
+ 
+ /* integer value in 'imm' field of BPF_CALL instruction selects which helper
+  * function eBPF program intends to call
+diff --git a/tools/testing/selftests/bpf/bpf_helpers.h b/tools/testing/selftests/bpf/bpf_helpers.h
+index 5a3d92c8bec8623176360b997a314daa51e3c8a5..1e751a611fbbdb3f601860f942c30915925db46d 100644
+--- a/tools/testing/selftests/bpf/bpf_helpers.h
++++ b/tools/testing/selftests/bpf/bpf_helpers.h
+@@ -228,6 +228,10 @@ static void *(*bpf_sk_storage_get)(void *map, struct bpf_sock *sk,
+ static int (*bpf_sk_storage_delete)(void *map, struct bpf_sock *sk) =
+ 	(void *)BPF_FUNC_sk_storage_delete;
+ static int (*bpf_send_signal)(unsigned sig) = (void *)BPF_FUNC_send_signal;
++static int (*bpf_extfuse_read_args)(void *ctx, int param, void *unsafe_ptr, int size) =
++	(void *) BPF_FUNC_extfuse_read_args;
++static int (*bpf_extfuse_write_args)(void *ctx, int param, const void *unsafe_ptr, int size) =
++	(void *) BPF_FUNC_extfuse_write_args;
+ 
+ /* llvm builtin functions that eBPF C program may use to
+  * emit BPF_LD_ABS and BPF_LD_IND instructions

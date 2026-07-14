@@ -1,0 +1,267 @@
+repository_path=libfuse_ExtFUSE-1.0/libfuse
+captured_at=2026-07-14
+git_version=git version 2.55.0
+
+[basics]
+head=5b381d81f0d2a4a37ca4c73a3c8e5e778138b32d
+head_tree=500a56d0fd38f2ed1d8c82271d54abbaf1777499
+branch=ExtFUSE-1.0
+detached=no
+symbolic_head=refs/heads/ExtFUSE-1.0
+upstream=origin/ExtFUSE-1.0
+describe=fuse_2_9_3-108-g5b381d8
+object_format=sha1
+shallow=false
+all_commits=1799
+git_dir_bytes=3697605
+origin=https://github.com/extfuse/libfuse.git
+
+[status]
+# branch.oid 5b381d81f0d2a4a37ca4c73a3c8e5e778138b32d
+# branch.head ExtFUSE-1.0
+# branch.upstream origin/ExtFUSE-1.0
+# branch.ab +0 -0
+
+[objects]
+count: 0
+size: 0 bytes
+in-pack: 11640
+packs: 1
+size-pack: 3.34 MiB
+prune-packable: 0
+garbage: 0
+size-garbage: 0 bytes
+
+[branches]
+* ExtFUSE-1.0                    5b381d81f0d2a4a37ca4c73a3c8e5e778138b32d [origin/ExtFUSE-1.0] Synchronize fuse_init_out with current kernel master
+  remotes/origin/ExtFUSE-1.0     5b381d81f0d2a4a37ca4c73a3c8e5e778138b32d Synchronize fuse_init_out with current kernel master
+  remotes/origin/HEAD            -> origin/master
+  remotes/origin/fuse-2_9_bugfix df499bf1ce634f6e67d4d366c4475d32143f00f0 Released 2.9.7.
+  remotes/origin/fuse_1_1_bugfix 4db49b5c1c8166f165bd32393b61bf69187aa050 version 1.4
+  remotes/origin/fuse_2_0_bugfix 16d7c0a74e4764576c1b282ecdb8c24252cde500 fix
+  remotes/origin/fuse_2_2_bugfix 2963d77cee1bd0cc0fa2bb261ed2394ec58e21d2 fix
+  remotes/origin/fuse_2_4_bugfix 968f7b933137b49467446283f3f6f17fc3ff993e new version
+  remotes/origin/fuse_2_5_bugfix d7c3355242f7b5bc144934c97b17ce00835d9bc3 new version
+  remotes/origin/fuse_2_6_bugfix a13323d10b62bafec9075126be8fc5bc02de82f2 fix memory leak on thread creation failure...
+  remotes/origin/fuse_2_7_bugfix 7140585ba73f9232e3a7951ee3ab0c83c483f997 * Fix checking for symlinks in umount from /tmp.  Reported by Al Viro * Fix umounting if /tmp is a symlink.  Reported by Franco Broi * Fix stack alignment for clone()
+  remotes/origin/fuse_2_8_bugfix fe2d9621519976a7811c00965318927fcef18984 libfuse: fix exec environment for mount and umount
+  remotes/origin/fuse_2_9_bugfix d04687923194d906fe5ad82dcd546c9807bf15b6 Released 2.9.9
+  remotes/origin/fuse_3_0_bugfix 3611d4e4a9936ed56999a763c7f6244c3dfe76a6 Memory leak fixed in file : mount_bsd.c
+  remotes/origin/master          86ebe1d2dffdd160936992bf456eaa30de56567a Travis CI: Use Xenial instead of Trusty.
+
+[refs]
+5b381d81f0d2a4a37ca4c73a3c8e5e778138b32d HEAD
+5b381d81f0d2a4a37ca4c73a3c8e5e778138b32d refs/heads/ExtFUSE-1.0
+5b381d81f0d2a4a37ca4c73a3c8e5e778138b32d refs/remotes/origin/ExtFUSE-1.0
+86ebe1d2dffdd160936992bf456eaa30de56567a refs/remotes/origin/HEAD
+df499bf1ce634f6e67d4d366c4475d32143f00f0 refs/remotes/origin/fuse-2_9_bugfix
+4db49b5c1c8166f165bd32393b61bf69187aa050 refs/remotes/origin/fuse_1_1_bugfix
+16d7c0a74e4764576c1b282ecdb8c24252cde500 refs/remotes/origin/fuse_2_0_bugfix
+2963d77cee1bd0cc0fa2bb261ed2394ec58e21d2 refs/remotes/origin/fuse_2_2_bugfix
+968f7b933137b49467446283f3f6f17fc3ff993e refs/remotes/origin/fuse_2_4_bugfix
+d7c3355242f7b5bc144934c97b17ce00835d9bc3 refs/remotes/origin/fuse_2_5_bugfix
+a13323d10b62bafec9075126be8fc5bc02de82f2 refs/remotes/origin/fuse_2_6_bugfix
+7140585ba73f9232e3a7951ee3ab0c83c483f997 refs/remotes/origin/fuse_2_7_bugfix
+fe2d9621519976a7811c00965318927fcef18984 refs/remotes/origin/fuse_2_8_bugfix
+d04687923194d906fe5ad82dcd546c9807bf15b6 refs/remotes/origin/fuse_2_9_bugfix
+3611d4e4a9936ed56999a763c7f6244c3dfe76a6 refs/remotes/origin/fuse_3_0_bugfix
+86ebe1d2dffdd160936992bf456eaa30de56567a refs/remotes/origin/master
+c45d1a66b86c3e274113fdf30ab39ad2c2a69179 refs/tags/before_interruptible
+f0cd8e4c394b16c496ed08a3448be0b5fdbfa5e5 refs/tags/debian_version_0_95-1
+ce63733284dd6519d2f4ca03c6aa8a6caa328379 refs/tags/debian_version_1_0-1
+fa92e199c5d2e9d08ce4726f53d98811d752f095 refs/tags/fuse-2.9.6
+a82a069c9770019bce0fe695e2b1f1d76139a52c refs/tags/fuse-2.9.6^{}
+850320db6dc96895799cd14dc2ac72fae857958d refs/tags/fuse-2.9.7
+df499bf1ce634f6e67d4d366c4475d32143f00f0 refs/tags/fuse-2.9.7^{}
+66f3faa29d6a74fb560013377b34ddfc47371c80 refs/tags/fuse-2.9.8
+6172ece7177fec28f3a771bbd445d5e9b9d5acd0 refs/tags/fuse-2.9.8^{}
+59d3809daa2921e1324a23b9dbec46e2a7cbd2be refs/tags/fuse-2.9.9
+d04687923194d906fe5ad82dcd546c9807bf15b6 refs/tags/fuse-2.9.9^{}
+0b59fa976f04865acfda70fcc5ec5bb8370fe9b7 refs/tags/fuse-3.0.0
+085cbab117b72df8da113a46d9ec9ba64ca301c6 refs/tags/fuse-3.0.0^{}
+1379fb7c4c9b8d98b391ec775326afc3406451be refs/tags/fuse-3.0.0pre0
+7667317eef10e32a1b25b9d0abf3e7805e4b8434 refs/tags/fuse-3.0.0pre0^{}
+4964c2137e0f1688dafd1f01b9379c59d044545c refs/tags/fuse-3.0.0rc1
+3475bc3b5a5ee0fd1fd867e2af8804c9d93c3bd4 refs/tags/fuse-3.0.0rc1^{}
+36024a8dc9e90cb6db94a4f04a0f252029448302 refs/tags/fuse-3.0.0rc2
+d0b377c9afde0ebc8f5d2c0be4d124912f3606c1 refs/tags/fuse-3.0.0rc2^{}
+4408138ebd2ea3cf0e6f6e2d10f919482f88e02d refs/tags/fuse-3.0.0rc3
+0ff1e001e8c422756312c397f277c717f2770cec refs/tags/fuse-3.0.0rc3^{}
+9b7295392d39329c532dc93b40420f3f8ec0108e refs/tags/fuse-3.0.1
+6c94a9f5b66e733ce455c1ddceb2f92be162cf0b refs/tags/fuse-3.0.1^{}
+60da25090e638abde9b3acc74d79e03eb9fd40ef refs/tags/fuse-3.0.2
+e90bb40f9cddd3dfc403328de21f538b77f814b3 refs/tags/fuse-3.0.2^{}
+426644ec400bf350b9e6272207f49764f62a8cec refs/tags/fuse-3.1.0
+d2ed5539fc406008816e9c65b44e2f1d0554ffbe refs/tags/fuse-3.1.0^{}
+4dba7c3bb9ce4cc179d5557ea9fa3da7344a1eee refs/tags/fuse-3.1.1
+4be90a6f9a9f242b1f480024a7cb3c749fcf5390 refs/tags/fuse-3.1.1^{}
+04ad37016fc2db37469e99f26fdd5e58fbe969c8 refs/tags/fuse-3.2.0
+cfdca8c6a0f901f409d0a66dd158bd6c8b470bb6 refs/tags/fuse-3.2.0^{}
+7284900737bda8826cd24b492623f85e92e32918 refs/tags/fuse-3.2.1
+ae2cb7bd98f2f63b1b86320d7b8f0622d9a971d9 refs/tags/fuse-3.2.1^{}
+44eed84933b0c1e3767062a2975d7b2d80113ab2 refs/tags/fuse-3.2.2
+f83695864f21e3d478207b2bce1a2c200d43367f refs/tags/fuse-3.2.2^{}
+50af330a49ae2b0b63e19dbd8af222ed26c57880 refs/tags/fuse-3.2.3
+88da32d665eb3372f590675a5642c52f11c3ca03 refs/tags/fuse-3.2.3^{}
+121e59175b9da54294f2bafdf8f8ec03e4af1bfc refs/tags/fuse-3.2.4
+9b74ebdf1b995a3ce56349880287b35f649d0690 refs/tags/fuse-3.2.4^{}
+86dc68c65d3ddfddce15955d6db4f9b6806fa1dc refs/tags/fuse-3.2.5
+932f4190e2b65419cef9960e27a7f94fcab9c816 refs/tags/fuse-3.2.5^{}
+569e6ba128eb9e958c61fab62d2606063f6b0de8 refs/tags/fuse-3.2.6
+67e4914f938259182fa84e1e941c724a14d605c0 refs/tags/fuse-3.2.6^{}
+64005f50885245b28fc0055e101948c1451997a7 refs/tags/fuse-3.3.0
+3e2fcf3a630e575bc420df254525834504dc01b7 refs/tags/fuse-3.3.0^{}
+ebd3a529178f84816e40476b3afc3aa55c110204 refs/tags/fuse-3.4.1
+00fcda459bb82c556478a00dbb0c24dedda6080c refs/tags/fuse-3.4.1^{}
+0a7077f5364454de39fb1ac486d4bd233aa11798 refs/tags/fuse_0_9
+ddc862a82407f1eb951eb0f021c7511c47535538 refs/tags/fuse_0_95
+8812479463fe0904388037b27a170ecc4510ab32 refs/tags/fuse_1_1
+140a7c9a98a31fb3dbc1979e6da95cb03c7bea1f refs/tags/fuse_1_1_post1
+e5948dcc4e0d2d9a33dfec33edbfaff07d66c8f8 refs/tags/fuse_1_1_pre1
+8b7a27a944462227a4b8fb12b0572f96eab468a2 refs/tags/fuse_1_1_pre2
+4190f0da990f04c01e379d21584c8c7597f079e4 refs/tags/fuse_1_2
+d14d8d93d802748dade06bcc144323f1b557241e refs/tags/fuse_1_3
+4db49b5c1c8166f165bd32393b61bf69187aa050 refs/tags/fuse_1_4
+127d49b0ef823cd8d7e6b83648f982566eab0016 refs/tags/fuse_1_9
+f3007f1833c50be71074ec29ff8614f34b2e05d2 refs/tags/fuse_2_0_merge1
+d1a835e7a5624c7ce265f8e523599b2285c70c85 refs/tags/fuse_2_0_merge2
+f208f8989f2f11d95eb8e92dd6be012f1364c3df refs/tags/fuse_2_0_merge3
+c68ca945dc13e36566be04d30b8c45129c925b9e refs/tags/fuse_2_0_merge4
+ee14a5a87590c62784f8345096da3e619a6c7e04 refs/tags/fuse_2_0_merge5
+dc2767d740168485ceb9db7c8ed4004cd5d79032 refs/tags/fuse_2_0_pre0
+da60b29bd900c1d16e480fa1d20f557275b85cff refs/tags/fuse_2_1
+def69883671db8f3b13a11d8b92252f52f81904e refs/tags/fuse_2_1_pre0
+ff6ba3e66bd0a8eb80974783b4152207230b1f19 refs/tags/fuse_2_1_pre1
+7ed2e5d408037e04cb74fd275822ebbceab6b788 refs/tags/fuse_2_2
+80a5a938a95dbd9b830984415e4a20f62ab2872e refs/tags/fuse_2_2_1
+703028c763ccfa99709e12dcfe3255d5b4a8d2c1 refs/tags/fuse_2_2_merge1
+967fd0119b3639db61fd710a2e95dfc21b93760c refs/tags/fuse_2_2_merge2
+33d1cfc63c8fd0bbfd85a7b90e8b1fc7b557bc9f refs/tags/fuse_2_2_merge3
+64107a63bef661b0ba53744bed84f7cd89c84c93 refs/tags/fuse_2_2_pre1
+c2e960e6dfb5e7dfd5b33e3b0f5939577c12f25f refs/tags/fuse_2_2_pre4
+64074146d6c768153f96bc67fe6eeb7243830f26 refs/tags/fuse_2_2_pre5
+d48d5f7b6084ec71aeb1d5a1203431b0396b0e01 refs/tags/fuse_2_2_pre6
+5647855a7ddd322e0e9ced1134e5ea6cc100904e refs/tags/fuse_2_3_0
+7ff715cf59da48707ae776b235beb25175ff632c refs/tags/fuse_2_3_pre1
+91b5e9932f5b2a995d8234ff2c24170db5c78e93 refs/tags/fuse_2_3_pre2
+30e093a32e4c9d0ebb803e0cc7e722dc909649ce refs/tags/fuse_2_3_pre3
+432d618289bb46840a08454a210924dd84dc765f refs/tags/fuse_2_3_pre4
+3efcb5658dced829d07253b973e2395d2affbccf refs/tags/fuse_2_3_pre5
+cb6413a37468bf2d2008c6109fddf216ca79b87f refs/tags/fuse_2_3_pre6
+0b9a06efb8fa6fa242a8d7483e596dbd88317377 refs/tags/fuse_2_3_pre7
+eb009c4336eb12bb687a5aa760cd4d319441f9e2 refs/tags/fuse_2_3_rc1
+f2491129cf48e1d7d4ec8906157870a527f2eed0 refs/tags/fuse_2_4_0
+2277ecc77b79c45bc6605673f001cabd6f4974f7 refs/tags/fuse_2_4_0_pre2
+c6931a932cd58604250f4dbb42a4d9c5420adf2b refs/tags/fuse_2_4_0_rc1
+c9daeb1e8d724c9015c8b363975261cf9b0d2fdb refs/tags/fuse_2_4_1
+968f7b933137b49467446283f3f6f17fc3ff993e refs/tags/fuse_2_4_2
+75bb0deaf170b5aa1894de324139196310509ccc refs/tags/fuse_2_5_0
+3b534a478324b360d2a9804a28c2a49e06176f30 refs/tags/fuse_2_5_0_pre1
+e07b1a2ab1930a4a2a4f288abb20ece1ac23537f refs/tags/fuse_2_5_0_pre2
+db207ea2cdaf1493b877efedce480e96b43d3f9a refs/tags/fuse_2_5_2
+d7c3355242f7b5bc144934c97b17ce00835d9bc3 refs/tags/fuse_2_5_3
+e414a2ff2cc5ba3bf618a3674a0a0a8408ad0470 refs/tags/fuse_2_6_0
+e109e285e0dc76c86830d9242084cd7638ff5752 refs/tags/fuse_2_6_0_pre1
+9db31dc1cff5ae2e854649f039f319d45eb58cf3 refs/tags/fuse_2_6_0_pre2
+ec3f6e4c0d5b3f1a1f91cf2a35a818ca9973fc6f refs/tags/fuse_2_6_0_pre3
+0c59ebfc9b811c60fcf808a5de33320eeeb394af refs/tags/fuse_2_6_0_rc1
+ff1e0d476dd531bb32fc5d132985223fb48e463f refs/tags/fuse_2_6_0_rc2
+12e5c98d0606df60ee198de0f394f0c5d4c7caaa refs/tags/fuse_2_6_0_rc3
+d66695521fbc77c5213c7c9bdb086abbee3773ee refs/tags/fuse_2_6_1
+14a4d347661a3dd93e511ba1b34288db15963a64 refs/tags/fuse_2_6_2
+47f91164c597af69cc4b2a634aa8b74c2891680f refs/tags/fuse_2_6_3
+b179843f8b8613a4ec53092c4d65e382cb712247 refs/tags/fuse_2_6_4
+0a0db26bd269562676b6251e8347f4b89907ace3 refs/tags/fuse_2_6_5
+1035b38a9a89713d50dcec6451fc5d3d77760686 refs/tags/fuse_2_6_merge1
+9462fbfb3c8265bf3d018934c98732c99ce15521 refs/tags/fuse_2_6_merge2
+ecfbf168951689ef12182d46aa4bf3b595996396 refs/tags/fuse_2_6_merge3
+d4428a57bc961d0ec23626cb066735ebb70b0621 refs/tags/fuse_2_7_0
+56ef5d3a1d2b56fa6a0c60f2d8df1393784aa90e refs/tags/fuse_2_7_0_rc1
+f6fc1280f9ef5a2833abca56c976cf5fb046dfa5 refs/tags/fuse_2_7_1
+a203851326b38162f61ea4f79941756ad1c2d021 refs/tags/fuse_2_7_2
+918f0ad95b73e506d20488cb8ddd35d1a2524c7c refs/tags/fuse_2_7_2_before_indent
+bf67154ab44944e69f92573837f15ddbaac1f3a9 refs/tags/fuse_2_7_3
+4a541a9617e2f6cf6762d78dd8554d7b92e09485 refs/tags/fuse_2_7_3^{}
+c301a0fb414260a551f46dcbfd8e35dde36e84b5 refs/tags/fuse_2_7_4
+c6cc2b46a6aa5ddb2e1e51744b765574fcf2f415 refs/tags/fuse_2_7_5
+697237681259821d3e26162186f2ed8d17cb8b22 refs/tags/fuse_2_8_0
+f9fa25e977d523c0d01200edc01b21cc2835c66c refs/tags/fuse_2_8_0_pre2
+003bbc6ad300643fe6947d8e2db119ad8050e44f refs/tags/fuse_2_8_1
+054635595a6dae38c56a2592d9ecc5987e841afd refs/tags/fuse_2_8_2
+96fd197a5ee0c3a94a317f04e0d2c088fc20d039 refs/tags/fuse_2_8_3
+754c488d9805be4861388d4733440a36fe6468bc refs/tags/fuse_2_8_4
+6d5fe8563b939be30333737fc05cdbc7af521f3a refs/tags/fuse_2_8_5
+1164b02fc8303b1ff748f2d5f8af71450cc430d1 refs/tags/fuse_2_8_6
+d83caf3f072d1f13464d96368422519053a3fe28 refs/tags/fuse_2_8_6^{}
+f6c3524f00b432221a0941cc52cacae1d756e577 refs/tags/fuse_2_8_7
+6889e443c5f08fe5972b0eb0fe58a269a5da922b refs/tags/fuse_2_8_start
+acc5c79dd60c1c2aa528743394e3a9fad7f5def3 refs/tags/fuse_2_9_0
+1186ccaa8d5f0fb3fed384781ec9e89dd8060202 refs/tags/fuse_2_9_1
+ad38195a88c80d73cb46507851ebb870f3bd588d refs/tags/fuse_2_9_2
+d44bf3a4ac1ce1b56672ac9ae4a5caa3a8ee6844 refs/tags/fuse_2_9_3
+6adcb719a933a31013c73fda8e0ccb0e13b45e58 refs/tags/fuse_2_9_4
+dbbe46676a610d9d607430c19e09afe5a271259f refs/tags/fuse_2_9_5
+1ac9ca5636f3309b86eab007dfe863d14f52e329 refs/tags/fuse_2_9_5^{}
+6433d1b8cbd8c7befaf50922858632daf2b33c8f refs/tags/fuse_2_9_start
+1186ccaa8d5f0fb3fed384781ec9e89dd8060202 refs/tags/fuse_3_0_start
+bc22e7bec727bc72d91a3001fbda976f1adf352d refs/tags/start
+
+[reflog]
+5b381d81f0d2a4a37ca4c73a3c8e5e778138b32d	refs/heads/ExtFUSE-1.0@{2026-07-10T19:52:28+09:00}	clone: from https://github.com/extfuse/libfuse.git	2daeeun	2daeeun.dev@gmail.com
+86ebe1d2dffdd160936992bf456eaa30de56567a	refs/remotes/origin/HEAD@{2026-07-10T19:52:28+09:00}	clone: from https://github.com/extfuse/libfuse.git	2daeeun	2daeeun.dev@gmail.com
+5b381d81f0d2a4a37ca4c73a3c8e5e778138b32d	HEAD@{2026-07-10T19:52:28+09:00}	clone: from https://github.com/extfuse/libfuse.git	2daeeun	2daeeun.dev@gmail.com
+
+[worktrees]
+worktree /home/leedaeeun/Documents/github/ExtFUSE_Code/libfuse_ExtFUSE-1.0/libfuse
+HEAD 5b381d81f0d2a4a37ca4c73a3c8e5e778138b32d
+branch refs/heads/ExtFUSE-1.0
+
+
+[config]
+file:.git/config	core.repositoryformatversion=0
+file:.git/config	core.filemode=true
+file:.git/config	core.bare=false
+file:.git/config	core.logallrefupdates=true
+file:.git/config	remote.origin.url=https://github.com/extfuse/libfuse.git
+file:.git/config	remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
+file:.git/config	branch.ExtFUSE-1.0.remote=origin
+file:.git/config	branch.ExtFUSE-1.0.merge=refs/heads/ExtFUSE-1.0
+
+[hooks]
+applypatch-msg.sample
+commit-msg.sample
+fsmonitor-watchman.sample
+post-update.sample
+pre-applypatch.sample
+pre-commit.sample
+pre-merge-commit.sample
+pre-push.sample
+pre-rebase.sample
+pre-receive.sample
+prepare-commit-msg.sample
+push-to-checkout.sample
+sendemail-validate.sample
+update.sample
+0223497a0b8b033aa58a3a521b8629869386cf7ab0e2f101963d328aa62193f7  applypatch-msg.sample
+efc1401b0e99d1ff51494d154d98b46c1e99059bcd8bf9f73cecde19fd3eb23b  commit-msg.sample
+9159720099ad5595b8e66645cbfd47763c1e920f46e0b50ae75e642bbec57ef0  fsmonitor-watchman.sample
+81765af2daef323061dcbc5e61fc16481cb74b3bac9ad8a174b186523586f6c5  post-update.sample
+e15c5b469ea3e0a695bea6f2c82bcf8e62821074939ddd85b77e0007ff165475  pre-applypatch.sample
+57185b7b9f05239d7ab52db045f5b89eb31348d7b2177eab214f5eb872e1971b  pre-commit.sample
+d3825a70337940ebbd0a5c072984e13245920cdf8898bd225c8d27a6dfc9cb53  pre-merge-commit.sample
+ecce9c7e04d3f5dd9d8ada81753dd1d549a9634b26770042b58dda00217d086a  pre-push.sample
+4febce867790052338076f4e66cc47efb14879d18097d1d61c8261859eaaa7b3  pre-rebase.sample
+a4c3d2b9c7bb3fd8d1441c31bd4ee71a595d66b44fcf49ddb310252320169989  pre-receive.sample
+e9ddcaa4189fddd25ed97fc8c789eca7b6ca16390b2392ae3276f0c8e1aa4619  prepare-commit-msg.sample
+a53d0741798b287c6dd7afa64aee473f305e65d3f49463bb9d7408ec3b12bf5f  push-to-checkout.sample
+44ebfc923dc5466bc009602f0ecf067b9c65459abfe8868ddc49b78e6ced7a92  sendemail-validate.sample
+8d5f2fa83e103cf08b57eaa67521df9194f45cbdbcb37da52ad586097a14d106  update.sample
+
+[special]
+notes=0
+replace=0
+stash=0
+alternates=
+partial_clone=
+lfs_files=0
+gitlinks=0

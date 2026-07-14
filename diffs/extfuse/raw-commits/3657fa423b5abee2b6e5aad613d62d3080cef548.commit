@@ -1,0 +1,8 @@
+tree f9eeda9d2ac0fbf8add3b274f5f140be15fa2374
+parent 179c03cebbadb209d7e6b75fcc832751d762811d
+author Ashish Bijlani <ashish.bijlani@gatech.edu> 1579459463 -0600
+committer Ashish Bijlani <ashish.bijlani@gatech.edu> 1579459463 -0600
+
+Update README instructions to build ExtFUSE library.
+
+Signed-off-by: Ashish Bijlani <ashish.bijlani@gatech.edu>

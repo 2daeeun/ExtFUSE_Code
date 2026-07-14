@@ -1,0 +1,104 @@
+repository_path=extfuse
+captured_at=2026-07-14
+git_version=git version 2.55.0
+
+[basics]
+head=d2acdb1c8e4531562fc77fe566896e771d03026e
+head_tree=d59ddb65225c9b7dc492939e74d229d21640a09c
+branch=master
+detached=no
+symbolic_head=refs/heads/master
+upstream=origin/master
+describe=d2acdb1
+object_format=sha1
+shallow=false
+all_commits=29
+git_dir_bytes=84758
+origin=https://github.com/extfuse/extfuse.git
+
+[status]
+# branch.oid d2acdb1c8e4531562fc77fe566896e771d03026e
+# branch.head master
+# branch.upstream origin/master
+# branch.ab +0 -0
+
+[objects]
+count: 1
+size: 4.00 KiB
+in-pack: 107
+packs: 1
+size-pack: 53.61 KiB
+prune-packable: 0
+garbage: 0
+size-garbage: 0 bytes
+
+[branches]
+* master                d2acdb1c8e4531562fc77fe566896e771d03026e [origin/master] Update README.md
+  remotes/origin/HEAD   -> origin/master
+  remotes/origin/master d2acdb1c8e4531562fc77fe566896e771d03026e Update README.md
+
+[refs]
+d2acdb1c8e4531562fc77fe566896e771d03026e HEAD
+d2acdb1c8e4531562fc77fe566896e771d03026e refs/heads/master
+d2acdb1c8e4531562fc77fe566896e771d03026e refs/remotes/origin/HEAD
+d2acdb1c8e4531562fc77fe566896e771d03026e refs/remotes/origin/master
+
+[reflog]
+d2acdb1c8e4531562fc77fe566896e771d03026e	refs/heads/master@{2026-07-14T17:38:16+09:00}	clone: from https://github.com/extfuse/extfuse.git	2daeeun	2daeeun.dev@gmail.com
+d2acdb1c8e4531562fc77fe566896e771d03026e	refs/remotes/origin/HEAD@{2026-07-14T17:38:16+09:00}	clone: from https://github.com/extfuse/extfuse.git	2daeeun	2daeeun.dev@gmail.com
+d2acdb1c8e4531562fc77fe566896e771d03026e	HEAD@{2026-07-14T17:38:16+09:00}	clone: from https://github.com/extfuse/extfuse.git	2daeeun	2daeeun.dev@gmail.com
+
+[worktrees]
+worktree /home/leedaeeun/Documents/github/ExtFUSE_Code/extfuse
+HEAD d2acdb1c8e4531562fc77fe566896e771d03026e
+branch refs/heads/master
+
+
+[config]
+file:.git/config	core.repositoryformatversion=0
+file:.git/config	core.filemode=true
+file:.git/config	core.bare=false
+file:.git/config	core.logallrefupdates=true
+file:.git/config	remote.origin.url=https://github.com/extfuse/extfuse.git
+file:.git/config	remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
+file:.git/config	branch.master.remote=origin
+file:.git/config	branch.master.merge=refs/heads/master
+
+[hooks]
+applypatch-msg.sample
+commit-msg.sample
+fsmonitor-watchman.sample
+post-update.sample
+pre-applypatch.sample
+pre-commit.sample
+pre-merge-commit.sample
+pre-push.sample
+pre-rebase.sample
+pre-receive.sample
+prepare-commit-msg.sample
+push-to-checkout.sample
+sendemail-validate.sample
+update.sample
+0223497a0b8b033aa58a3a521b8629869386cf7ab0e2f101963d328aa62193f7  applypatch-msg.sample
+efc1401b0e99d1ff51494d154d98b46c1e99059bcd8bf9f73cecde19fd3eb23b  commit-msg.sample
+9159720099ad5595b8e66645cbfd47763c1e920f46e0b50ae75e642bbec57ef0  fsmonitor-watchman.sample
+81765af2daef323061dcbc5e61fc16481cb74b3bac9ad8a174b186523586f6c5  post-update.sample
+e15c5b469ea3e0a695bea6f2c82bcf8e62821074939ddd85b77e0007ff165475  pre-applypatch.sample
+57185b7b9f05239d7ab52db045f5b89eb31348d7b2177eab214f5eb872e1971b  pre-commit.sample
+d3825a70337940ebbd0a5c072984e13245920cdf8898bd225c8d27a6dfc9cb53  pre-merge-commit.sample
+ecce9c7e04d3f5dd9d8ada81753dd1d549a9634b26770042b58dda00217d086a  pre-push.sample
+4febce867790052338076f4e66cc47efb14879d18097d1d61c8261859eaaa7b3  pre-rebase.sample
+a4c3d2b9c7bb3fd8d1441c31bd4ee71a595d66b44fcf49ddb310252320169989  pre-receive.sample
+e9ddcaa4189fddd25ed97fc8c789eca7b6ca16390b2392ae3276f0c8e1aa4619  prepare-commit-msg.sample
+a53d0741798b287c6dd7afa64aee473f305e65d3f49463bb9d7408ec3b12bf5f  push-to-checkout.sample
+44ebfc923dc5466bc009602f0ecf067b9c65459abfe8868ddc49b78e6ced7a92  sendemail-validate.sample
+8d5f2fa83e103cf08b57eaa67521df9194f45cbdbcb37da52ad586097a14d106  update.sample
+
+[special]
+notes=0
+replace=0
+stash=0
+alternates=
+partial_clone=
+lfs_files=0
+gitlinks=0

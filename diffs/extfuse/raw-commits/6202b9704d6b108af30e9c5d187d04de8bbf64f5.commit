@@ -1,0 +1,8 @@
+tree 838b7cb4f469e7314b6d536891e16b512885f52f
+parent 3657fa423b5abee2b6e5aad613d62d3080cef548
+author Ashish Bijlani <ashish.bijlani@gatech.edu> 1579459653 -0600
+committer Ashish Bijlani <ashish.bijlani@gatech.edu> 1579459653 -0600
+
+Add LICENSE file for the project
+
+Signed-off-by: Ashish Bijlani <ashish.bijlani@gatech.edu>

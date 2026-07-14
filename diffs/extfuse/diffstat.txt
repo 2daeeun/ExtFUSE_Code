@@ -1,0 +1,23 @@
+ LICENSE           | 504 +++++++++++++++++++++++++++++++++++++++++++++++++++
+ Makefile          |  99 ++++++++++
+ README.md         |  65 +++++++
+ bpf/attr.h        |  21 +++
+ bpf/extfuse.c     | 532 ++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ bpf/lookup.h      |  23 +++
+ include/ebpf.h    |  52 ++++++
+ include/extfuse.h |  56 ++++++
+ include/utils.h   |  28 +++
+ src/ebpf.c        | 136 ++++++++++++++
+ src/utils.c       | 194 ++++++++++++++++++++
+ 11 files changed, 1710 insertions(+)
+ create mode 100644 LICENSE
+ create mode 100644 Makefile
+ create mode 100644 README.md
+ create mode 100644 bpf/attr.h
+ create mode 100644 bpf/extfuse.c
+ create mode 100644 bpf/lookup.h
+ create mode 100644 include/ebpf.h
+ create mode 100644 include/extfuse.h
+ create mode 100644 include/utils.h
+ create mode 100644 src/ebpf.c
+ create mode 100644 src/utils.c

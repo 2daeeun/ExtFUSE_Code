@@ -1,0 +1,8 @@
+tree 0401dd625e958e4b583fb8a68d036f6c55e58a5b
+parent 022fb65e7bf0d3d0b5a20378793215ec58c29167
+author Ashish Bijlani <ashish.bijlani@gmail.com> 1594514712 -0500
+committer Ashish Bijlani <ashish.bijlani@gmail.com> 1594514712 -0500
+
+Use .so extension for libextfuse
+
+Signed-off-by: Ashish Bijlani <ashish.bijlani@gmail.com>

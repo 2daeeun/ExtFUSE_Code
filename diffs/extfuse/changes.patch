@@ -1,0 +1,1776 @@
+diff --git a/LICENSE b/LICENSE
+new file mode 100644
+index 0000000000000000000000000000000000000000..8000a6faacf471c537530805ab29523c7732e11a
+--- /dev/null
++++ b/LICENSE
+@@ -0,0 +1,504 @@
++                  GNU LESSER GENERAL PUBLIC LICENSE
++                       Version 2.1, February 1999
++
++ Copyright (C) 1991, 1999 Free Software Foundation, Inc.
++ 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
++ Everyone is permitted to copy and distribute verbatim copies
++ of this license document, but changing it is not allowed.
++
++[This is the first released version of the Lesser GPL.  It also counts
++ as the successor of the GNU Library Public License, version 2, hence
++ the version number 2.1.]
++
++                            Preamble
++
++  The licenses for most software are designed to take away your
++freedom to share and change it.  By contrast, the GNU General Public
++Licenses are intended to guarantee your freedom to share and change
++free software--to make sure the software is free for all its users.
++
++  This license, the Lesser General Public License, applies to some
++specially designated software packages--typically libraries--of the
++Free Software Foundation and other authors who decide to use it.  You
++can use it too, but we suggest you first think carefully about whether
++this license or the ordinary General Public License is the better
++strategy to use in any particular case, based on the explanations below.
++
++  When we speak of free software, we are referring to freedom of use,
++not price.  Our General Public Licenses are designed to make sure that
++you have the freedom to distribute copies of free software (and charge
++for this service if you wish); that you receive source code or can get
++it if you want it; that you can change the software and use pieces of
++it in new free programs; and that you are informed that you can do
++these things.
++
++  To protect your rights, we need to make restrictions that forbid
++distributors to deny you these rights or to ask you to surrender these
++rights.  These restrictions translate to certain responsibilities for
++you if you distribute copies of the library or if you modify it.
++
++  For example, if you distribute copies of the library, whether gratis
++or for a fee, you must give the recipients all the rights that we gave
++you.  You must make sure that they, too, receive or can get the source
++code.  If you link other code with the library, you must provide
++complete object files to the recipients, so that they can relink them
++with the library after making changes to the library and recompiling
++it.  And you must show them these terms so they know their rights.
++
++  We protect your rights with a two-step method: (1) we copyright the
++library, and (2) we offer you this license, which gives you legal
++permission to copy, distribute and/or modify the library.
++
++  To protect each distributor, we want to make it very clear that
++there is no warranty for the free library.  Also, if the library is
++modified by someone else and passed on, the recipients should know
++that what they have is not the original version, so that the original
++author's reputation will not be affected by problems that might be
++introduced by others.
++
++  Finally, software patents pose a constant threat to the existence of
++any free program.  We wish to make sure that a company cannot
++effectively restrict the users of a free program by obtaining a
++restrictive license from a patent holder.  Therefore, we insist that
++any patent license obtained for a version of the library must be
++consistent with the full freedom of use specified in this license.
++
++  Most GNU software, including some libraries, is covered by the
++ordinary GNU General Public License.  This license, the GNU Lesser
++General Public License, applies to certain designated libraries, and
++is quite different from the ordinary General Public License.  We use
++this license for certain libraries in order to permit linking those
++libraries into non-free programs.
++
++  When a program is linked with a library, whether statically or using
++a shared library, the combination of the two is legally speaking a
++combined work, a derivative of the original library.  The ordinary
++General Public License therefore permits such linking only if the
++entire combination fits its criteria of freedom.  The Lesser General
++Public License permits more lax criteria for linking other code with
++the library.
++
++  We call this license the "Lesser" General Public License because it
++does Less to protect the user's freedom than the ordinary General
++Public License.  It also provides other free software developers Less
++of an advantage over competing non-free programs.  These disadvantages
++are the reason we use the ordinary General Public License for many
++libraries.  However, the Lesser license provides advantages in certain
++special circumstances.
++
++  For example, on rare occasions, there may be a special need to
++encourage the widest possible use of a certain library, so that it becomes
++a de-facto standard.  To achieve this, non-free programs must be
++allowed to use the library.  A more frequent case is that a free
++library does the same job as widely used non-free libraries.  In this
++case, there is little to gain by limiting the free library to free
++software only, so we use the Lesser General Public License.
++
++  In other cases, permission to use a particular library in non-free
++programs enables a greater number of people to use a large body of
++free software.  For example, permission to use the GNU C Library in
++non-free programs enables many more people to use the whole GNU
++operating system, as well as its variant, the GNU/Linux operating
++system.
++
++  Although the Lesser General Public License is Less protective of the
++users' freedom, it does ensure that the user of a program that is
++linked with the Library has the freedom and the wherewithal to run
++that program using a modified version of the Library.
++
++  The precise terms and conditions for copying, distribution and
++modification follow.  Pay close attention to the difference between a
++"work based on the library" and a "work that uses the library".  The
++former contains code derived from the library, whereas the latter must
++be combined with the library in order to run.
++
++                  GNU LESSER GENERAL PUBLIC LICENSE
++   TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
++
++  0. This License Agreement applies to any software library or other
++program which contains a notice placed by the copyright holder or
++other authorized party saying it may be distributed under the terms of
++this Lesser General Public License (also called "this License").
++Each licensee is addressed as "you".
++
++  A "library" means a collection of software functions and/or data
++prepared so as to be conveniently linked with application programs
++(which use some of those functions and data) to form executables.
++
++  The "Library", below, refers to any such software library or work
++which has been distributed under these terms.  A "work based on the
++Library" means either the Library or any derivative work under
++copyright law: that is to say, a work containing the Library or a
++portion of it, either verbatim or with modifications and/or translated
++straightforwardly into another language.  (Hereinafter, translation is
++included without limitation in the term "modification".)
++
++  "Source code" for a work means the preferred form of the work for
++making modifications to it.  For a library, complete source code means
++all the source code for all modules it contains, plus any associated
++interface definition files, plus the scripts used to control compilation
++and installation of the library.
++
++  Activities other than copying, distribution and modification are not
++covered by this License; they are outside its scope.  The act of
++running a program using the Library is not restricted, and output from
++such a program is covered only if its contents constitute a work based
++on the Library (independent of the use of the Library in a tool for
++writing it).  Whether that is true depends on what the Library does
++and what the program that uses the Library does.
++
++  1. You may copy and distribute verbatim copies of the Library's
++complete source code as you receive it, in any medium, provided that
++you conspicuously and appropriately publish on each copy an
++appropriate copyright notice and disclaimer of warranty; keep intact
++all the notices that refer to this License and to the absence of any
++warranty; and distribute a copy of this License along with the
++Library.
++
++  You may charge a fee for the physical act of transferring a copy,
++and you may at your option offer warranty protection in exchange for a
++fee.
++
++  2. You may modify your copy or copies of the Library or any portion
++of it, thus forming a work based on the Library, and copy and
++distribute such modifications or work under the terms of Section 1
++above, provided that you also meet all of these conditions:
++
++    a) The modified work must itself be a software library.
++
++    b) You must cause the files modified to carry prominent notices
++    stating that you changed the files and the date of any change.
++
++    c) You must cause the whole of the work to be licensed at no
++    charge to all third parties under the terms of this License.
++
++    d) If a facility in the modified Library refers to a function or a
++    table of data to be supplied by an application program that uses
++    the facility, other than as an argument passed when the facility
++    is invoked, then you must make a good faith effort to ensure that,
++    in the event an application does not supply such function or
++    table, the facility still operates, and performs whatever part of
++    its purpose remains meaningful.
++
++    (For example, a function in a library to compute square roots has
++    a purpose that is entirely well-defined independent of the
++    application.  Therefore, Subsection 2d requires that any
++    application-supplied function or table used by this function must
++    be optional: if the application does not supply it, the square
++    root function must still compute square roots.)
++
++These requirements apply to the modified work as a whole.  If
++identifiable sections of that work are not derived from the Library,
++and can be reasonably considered independent and separate works in
++themselves, then this License, and its terms, do not apply to those
++sections when you distribute them as separate works.  But when you
++distribute the same sections as part of a whole which is a work based
++on the Library, the distribution of the whole must be on the terms of
++this License, whose permissions for other licensees extend to the
++entire whole, and thus to each and every part regardless of who wrote
++it.
++
++Thus, it is not the intent of this section to claim rights or contest
++your rights to work written entirely by you; rather, the intent is to
++exercise the right to control the distribution of derivative or
++collective works based on the Library.
++
++In addition, mere aggregation of another work not based on the Library
++with the Library (or with a work based on the Library) on a volume of
++a storage or distribution medium does not bring the other work under
++the scope of this License.
++
++  3. You may opt to apply the terms of the ordinary GNU General Public
++License instead of this License to a given copy of the Library.  To do
++this, you must alter all the notices that refer to this License, so
++that they refer to the ordinary GNU General Public License, version 2,
++instead of to this License.  (If a newer version than version 2 of the
++ordinary GNU General Public License has appeared, then you can specify
++that version instead if you wish.)  Do not make any other change in
++these notices.
++
++  Once this change is made in a given copy, it is irreversible for
++that copy, so the ordinary GNU General Public License applies to all
++subsequent copies and derivative works made from that copy.
++
++  This option is useful when you wish to copy part of the code of
++the Library into a program that is not a library.
++
++  4. You may copy and distribute the Library (or a portion or
++derivative of it, under Section 2) in object code or executable form
++under the terms of Sections 1 and 2 above provided that you accompany
++it with the complete corresponding machine-readable source code, which
++must be distributed under the terms of Sections 1 and 2 above on a
++medium customarily used for software interchange.
++
++  If distribution of object code is made by offering access to copy
++from a designated place, then offering equivalent access to copy the
++source code from the same place satisfies the requirement to
++distribute the source code, even though third parties are not
++compelled to copy the source along with the object code.
++
++  5. A program that contains no derivative of any portion of the
++Library, but is designed to work with the Library by being compiled or
++linked with it, is called a "work that uses the Library".  Such a
++work, in isolation, is not a derivative work of the Library, and
++therefore falls outside the scope of this License.
++
++  However, linking a "work that uses the Library" with the Library
++creates an executable that is a derivative of the Library (because it
++contains portions of the Library), rather than a "work that uses the
++library".  The executable is therefore covered by this License.
++Section 6 states terms for distribution of such executables.
++
++  When a "work that uses the Library" uses material from a header file
++that is part of the Library, the object code for the work may be a
++derivative work of the Library even though the source code is not.
++Whether this is true is especially significant if the work can be
++linked without the Library, or if the work is itself a library.  The
++threshold for this to be true is not precisely defined by law.
++
++  If such an object file uses only numerical parameters, data
++structure layouts and accessors, and small macros and small inline
++functions (ten lines or less in length), then the use of the object
++file is unrestricted, regardless of whether it is legally a derivative
++work.  (Executables containing this object code plus portions of the
++Library will still fall under Section 6.)
++
++  Otherwise, if the work is a derivative of the Library, you may
++distribute the object code for the work under the terms of Section 6.
++Any executables containing that work also fall under Section 6,
++whether or not they are linked directly with the Library itself.
++
++  6. As an exception to the Sections above, you may also combine or
++link a "work that uses the Library" with the Library to produce a
++work containing portions of the Library, and distribute that work
++under terms of your choice, provided that the terms permit
++modification of the work for the customer's own use and reverse
++engineering for debugging such modifications.
++
++  You must give prominent notice with each copy of the work that the
++Library is used in it and that the Library and its use are covered by
++this License.  You must supply a copy of this License.  If the work
++during execution displays copyright notices, you must include the
++copyright notice for the Library among them, as well as a reference
++directing the user to the copy of this License.  Also, you must do one
++of these things:
++
++    a) Accompany the work with the complete corresponding
++    machine-readable source code for the Library including whatever
++    changes were used in the work (which must be distributed under
++    Sections 1 and 2 above); and, if the work is an executable linked
++    with the Library, with the complete machine-readable "work that
++    uses the Library", as object code and/or source code, so that the
++    user can modify the Library and then relink to produce a modified
++    executable containing the modified Library.  (It is understood
++    that the user who changes the contents of definitions files in the
++    Library will not necessarily be able to recompile the application
++    to use the modified definitions.)
++
++    b) Use a suitable shared library mechanism for linking with the
++    Library.  A suitable mechanism is one that (1) uses at run time a
++    copy of the library already present on the user's computer system,
++    rather than copying library functions into the executable, and (2)
++    will operate properly with a modified version of the library, if
++    the user installs one, as long as the modified version is
++    interface-compatible with the version that the work was made with.
++
++    c) Accompany the work with a written offer, valid for at
++    least three years, to give the same user the materials
++    specified in Subsection 6a, above, for a charge no more
++    than the cost of performing this distribution.
++
++    d) If distribution of the work is made by offering access to copy
++    from a designated place, offer equivalent access to copy the above
++    specified materials from the same place.
++
++    e) Verify that the user has already received a copy of these
++    materials or that you have already sent this user a copy.
++
++  For an executable, the required form of the "work that uses the
++Library" must include any data and utility programs needed for
++reproducing the executable from it.  However, as a special exception,
++the materials to be distributed need not include anything that is
++normally distributed (in either source or binary form) with the major
++components (compiler, kernel, and so on) of the operating system on
++which the executable runs, unless that component itself accompanies
++the executable.
++
++  It may happen that this requirement contradicts the license
++restrictions of other proprietary libraries that do not normally
++accompany the operating system.  Such a contradiction means you cannot
++use both them and the Library together in an executable that you
++distribute.
++
++  7. You may place library facilities that are a work based on the
++Library side-by-side in a single library together with other library
++facilities not covered by this License, and distribute such a combined
++library, provided that the separate distribution of the work based on
++the Library and of the other library facilities is otherwise
++permitted, and provided that you do these two things:
++
++    a) Accompany the combined library with a copy of the same work
++    based on the Library, uncombined with any other library
++    facilities.  This must be distributed under the terms of the
++    Sections above.
++
++    b) Give prominent notice with the combined library of the fact
++    that part of it is a work based on the Library, and explaining
++    where to find the accompanying uncombined form of the same work.
++
++  8. You may not copy, modify, sublicense, link with, or distribute
++the Library except as expressly provided under this License.  Any
++attempt otherwise to copy, modify, sublicense, link with, or
++distribute the Library is void, and will automatically terminate your
++rights under this License.  However, parties who have received copies,
++or rights, from you under this License will not have their licenses
++terminated so long as such parties remain in full compliance.
++
++  9. You are not required to accept this License, since you have not
++signed it.  However, nothing else grants you permission to modify or
++distribute the Library or its derivative works.  These actions are
++prohibited by law if you do not accept this License.  Therefore, by
++modifying or distributing the Library (or any work based on the
++Library), you indicate your acceptance of this License to do so, and
++all its terms and conditions for copying, distributing or modifying
++the Library or works based on it.
++
++  10. Each time you redistribute the Library (or any work based on the
++Library), the recipient automatically receives a license from the
++original licensor to copy, distribute, link with or modify the Library
++subject to these terms and conditions.  You may not impose any further
++restrictions on the recipients' exercise of the rights granted herein.
++You are not responsible for enforcing compliance by third parties with
++this License.
++
++  11. If, as a consequence of a court judgment or allegation of patent
++infringement or for any other reason (not limited to patent issues),
++conditions are imposed on you (whether by court order, agreement or
++otherwise) that contradict the conditions of this License, they do not
++excuse you from the conditions of this License.  If you cannot
++distribute so as to satisfy simultaneously your obligations under this
++License and any other pertinent obligations, then as a consequence you
++may not distribute the Library at all.  For example, if a patent
++license would not permit royalty-free redistribution of the Library by
++all those who receive copies directly or indirectly through you, then
++the only way you could satisfy both it and this License would be to
++refrain entirely from distribution of the Library.
++
++If any portion of this section is held invalid or unenforceable under any
++particular circumstance, the balance of the section is intended to apply,
++and the section as a whole is intended to apply in other circumstances.
++
++It is not the purpose of this section to induce you to infringe any
++patents or other property right claims or to contest validity of any
++such claims; this section has the sole purpose of protecting the
++integrity of the free software distribution system which is
++implemented by public license practices.  Many people have made
++generous contributions to the wide range of software distributed
++through that system in reliance on consistent application of that
++system; it is up to the author/donor to decide if he or she is willing
++to distribute software through any other system and a licensee cannot
++impose that choice.
++
++This section is intended to make thoroughly clear what is believed to
++be a consequence of the rest of this License.
++
++  12. If the distribution and/or use of the Library is restricted in
++certain countries either by patents or by copyrighted interfaces, the
++original copyright holder who places the Library under this License may add
++an explicit geographical distribution limitation excluding those countries,
++so that distribution is permitted only in or among countries not thus
++excluded.  In such case, this License incorporates the limitation as if
++written in the body of this License.
++
++  13. The Free Software Foundation may publish revised and/or new
++versions of the Lesser General Public License from time to time.
++Such new versions will be similar in spirit to the present version,
++but may differ in detail to address new problems or concerns.
++
++Each version is given a distinguishing version number.  If the Library
++specifies a version number of this License which applies to it and
++"any later version", you have the option of following the terms and
++conditions either of that version or of any later version published by
++the Free Software Foundation.  If the Library does not specify a
++license version number, you may choose any version ever published by
++the Free Software Foundation.
++
++  14. If you wish to incorporate parts of the Library into other free
++programs whose distribution conditions are incompatible with these,
++write to the author to ask for permission.  For software which is
++copyrighted by the Free Software Foundation, write to the Free
++Software Foundation; we sometimes make exceptions for this.  Our
++decision will be guided by the two goals of preserving the free status
++of all derivatives of our free software and of promoting the sharing
++and reuse of software generally.
++
++                            NO WARRANTY
++
++  15. BECAUSE THE LIBRARY IS LICENSED FREE OF CHARGE, THERE IS NO
++WARRANTY FOR THE LIBRARY, TO THE EXTENT PERMITTED BY APPLICABLE LAW.
++EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR
++OTHER PARTIES PROVIDE THE LIBRARY "AS IS" WITHOUT WARRANTY OF ANY
++KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE
++IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
++PURPOSE.  THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE
++LIBRARY IS WITH YOU.  SHOULD THE LIBRARY PROVE DEFECTIVE, YOU ASSUME
++THE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.
++
++  16. IN NO EVENT UNLESS REQUIRED BY APPLICABLE LAW OR AGREED TO IN
++WRITING WILL ANY COPYRIGHT HOLDER, OR ANY OTHER PARTY WHO MAY MODIFY
++AND/OR REDISTRIBUTE THE LIBRARY AS PERMITTED ABOVE, BE LIABLE TO YOU
++FOR DAMAGES, INCLUDING ANY GENERAL, SPECIAL, INCIDENTAL OR
++CONSEQUENTIAL DAMAGES ARISING OUT OF THE USE OR INABILITY TO USE THE
++LIBRARY (INCLUDING BUT NOT LIMITED TO LOSS OF DATA OR DATA BEING
++RENDERED INACCURATE OR LOSSES SUSTAINED BY YOU OR THIRD PARTIES OR A
++FAILURE OF THE LIBRARY TO OPERATE WITH ANY OTHER SOFTWARE), EVEN IF
++SUCH HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH
++DAMAGES.
++
++                     END OF TERMS AND CONDITIONS
++
++           How to Apply These Terms to Your New Libraries
++
++  If you develop a new library, and you want it to be of the greatest
++possible use to the public, we recommend making it free software that
++everyone can redistribute and change.  You can do so by permitting
++redistribution under these terms (or, alternatively, under the terms of the
++ordinary General Public License).
++
++  To apply these terms, attach the following notices to the library.  It is
++safest to attach them to the start of each source file to most effectively
++convey the exclusion of warranty; and each file should have at least the
++"copyright" line and a pointer to where the full notice is found.
++
++    <one line to give the library's name and a brief idea of what it does.>
++    Copyright (C) <year>  <name of author>
++
++    This library is free software; you can redistribute it and/or
++    modify it under the terms of the GNU Lesser General Public
++    License as published by the Free Software Foundation; either
++    version 2.1 of the License, or (at your option) any later version.
++
++    This library is distributed in the hope that it will be useful,
++    but WITHOUT ANY WARRANTY; without even the implied warranty of
++    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
++    Lesser General Public License for more details.
++
++    You should have received a copy of the GNU Lesser General Public
++    License along with this library; if not, write to the Free Software
++    Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301
++    USA
++
++Also add information on how to contact you by electronic and paper mail.
++
++You should also get your employer (if you work as a programmer) or your
++school, if any, to sign a "copyright disclaimer" for the library, if
++necessary.  Here is a sample; alter the names:
++
++  Yoyodyne, Inc., hereby disclaims all copyright interest in the
++  library `Frob' (a library for tweaking knobs) written by James Random
++  Hacker.
++
++  <signature of Ty Coon>, 1 April 1990
++  Ty Coon, President of Vice
++
++That's all there is to it!
+diff --git a/Makefile b/Makefile
+new file mode 100644
+index 0000000000000000000000000000000000000000..0578bbf26354d22756b5371b949ccf79f933b63d
+--- /dev/null
++++ b/Makefile
+@@ -0,0 +1,99 @@
++#
++# Based on linux/samples/bpf/Makefile
++#
++
++# kbuild trick to avoid linker error. Can be omitted if a module is built.
++obj- := dummy.o
++
++# List of programs to build
++hostprogs-y := libextfuse.so
++
++libextfuse.so-objs := \
++	src/ebpf.o src/libbpf.o src/bpf_load.o
++
++# Generate .c files based on kernel source
++%.c:
++	cp $(objtree)/samples/bpf/bpf_load.c $(PWD)/src/.
++	if [ -f $(objtree)/samples/bpf/libbpf.c ]; then \
++		cp $(objtree)/samples/bpf/libbpf.c $(PWD)/src/.; \
++	else \
++		cp $(objtree)/tools/lib/bpf/bpf.c $(PWD)/src/libbpf.c; \
++	fi;
++
++# Tell kbuild to always build the programs
++always := $(hostprogs-y)
++always += bpf/extfuse.o
++
++EXTRA_CFLAGS += -I$(PWD)/include -I$(objtree)/samples/bpf
++ifneq ("$(wildcard $(srctree)/samples/bpf/asm_goto_workaround.h)","")
++	EXTRA_CFLAGS += -I$(srctree)/samples/bpf/ -include asm_goto_workaround.h
++endif
++
++ifdef HOSTCFLAGS
++HOSTCFLAGS += -fPIC -I$(PWD)/include
++HOSTCFLAGS += -I$(objtree)/usr/include
++HOSTCFLAGS += -I$(objtree)/samples/bpf
++HOSTCFLAGS += -I$(objtree)/tools/lib/bpf
++HOSTCFLAGS += -I$(objtree)/tools/lib -I$(srctree)/tools/include
++HOSTCFLAGS += -I$(srctree)/tools/perf
++HOSTLOADLIBES_libextfuse.so += -shared -lelf -lpthread
++else
++KBUILD_HOSTCFLAGS += -fPIC -I$(PWD)/include
++KBUILD_HOSTCFLAGS += -I$(objtree)/usr/include
++KBUILD_HOSTCFLAGS += -I$(srctree)/samples/bpf
++KBUILD_HOSTCFLAGS += -I$(srctree)/tools/lib/bpf
++KBUILD_HOSTCFLAGS += -I$(srctree)/tools/testing/selftests/bpf/
++KBUILD_HOSTCFLAGS += -I$(srctree)/tools/lib -I$(srctree)/tools/include
++KBUILD_HOSTCFLAGS += -I$(srctree)/tools/perf
++HOSTLDLIBS_libextfuse.so += -shared -lelf -lpthread
++endif
++
++HOSTCFLAGS_bpf_load.o += -I$(objtree)/usr/include -Wno-unused-variable
++HOSTCFLAGS_libbpf.o += -I$(objtree)/usr/include -Wno-unused-variable
++
++# Allows pointing LLC/CLANG to a LLVM backend with bpf support, redefine on cmdline:
++#  make samples/bpf/ LLC=~/git/llvm/build/bin/llc CLANG=~/git/llvm/build/bin/clang
++LLC ?= llc
++CLANG ?= clang
++
++# Trick to allow make to be run from this directory
++all:
++	$(MAKE) -C /lib/modules/`uname -r`/build M=${PWD}
++
++clean:
++	$(MAKE) -C /lib/modules/`uname -r`/build M=${PWD} clean
++	rm -f src/*.o bpf/*.o *.so
++	rm -f src/libbpf.c src/bpf_load.c
++
++# Verify LLVM compiler tools are available and bpf target is supported by llc
++.PHONY: verify_cmds verify_target_bpf $(CLANG) $(LLC)
++
++verify_cmds: $(CLANG) $(LLC)
++	@for TOOL in $^ ; do \
++		if ! (which -- "$${TOOL}" > /dev/null 2>&1); then \
++			echo "*** ERROR: Cannot find LLVM tool $${TOOL}" ;\
++			exit 1; \
++		else true; fi; \
++	done
++
++verify_target_bpf: verify_cmds
++	@if ! (${LLC} -march=bpf -mattr=help > /dev/null 2>&1); then \
++		echo "*** ERROR: LLVM (${LLC}) does not support 'bpf' target" ;\
++		echo "   NOTICE: LLVM version >= 3.7.1 required" ;\
++		exit 2; \
++	else true; fi
++
++$(src)/*.c: verify_target_bpf
++
++# asm/sysreg.h - inline assembly used by it is incompatible with llvm.
++# But, there is no easy way to fix it, so just exclude it since it is
++# useless for BPF samples.
++$(obj)/%.o: $(src)/%.c
++	$(CLANG) $(NOSTDINC_FLAGS) $(LINUXINCLUDE) $(EXTRA_CFLAGS) \
++		-I$(srctree)/tools/testing/selftests/bpf/ -I$(srctree)/fs/fuse/ \
++		-D__KERNEL__ -D__BPF_TRACING__ -Wno-unused-value -Wno-pointer-sign \
++		-D__TARGET_ARCH_$(ARCH) -Wno-compare-distinct-pointer-types \
++		-Wno-gnu-variable-sized-type-not-at-end \
++		-Wno-address-of-packed-member -Wno-tautological-compare \
++		-Wno-unknown-warning-option $(CLANG_ARCH_ARGS) \
++		-O2 -emit-llvm -c $< -o -| $(LLC) -march=bpf $(LLC_FLAGS) -filetype=obj -o $@
+diff --git a/README.md b/README.md
+new file mode 100644
+index 0000000000000000000000000000000000000000..5e6898021592d06b73d1c50bdb756b7fc06afe19
+--- /dev/null
++++ b/README.md
+@@ -0,0 +1,65 @@
++# Extension Framework for FUSE
++
++> **Note** for consulting/customization, please reach out to the [author](https://github.com/ashishbijlani).
++
++We have modifed the FUSE driver to support ExtFUSE feature. Therefore, you will have to install and run a our modified kernel. To clone the kernel sources do:
++```
++$ git clone --branch ExtFUSE-1.0 https://github.com/extfuse/linux 
++$ cd linux
++$ make menuconfig
++--> General setup
++	[*] Enable bpf() system call
++--> File systems  
++	<*> FUSE (Filesystem in Userspace) support                                                                                                                                       
++	[*]   Extension framework for FUSE
++$ make -j4
++$ sudo make install -j4
++$ make headers_install
++```
++In menuconfig step, **DO NOT** select FUSE as a kernel module as it will cause the kernel compilation to fail; instead, build FUSE into the kernel.
++
++Boot into the new kernel. Clone ExtFUSE library sources and build. Export the path to repo as EXTFUSE_REPO_PATH. You will need LLVM/Clang toolchain to build.
++```
++$ git clone https://github.com/extfuse/extfuse
++$ cd extfuse
++$ export EXTFUSE_REPO_PATH=$(pwd)
++$ LLC=llc-3.8 CLANG=clang-3.8 make
++```
++
++The eBPF code for handling FUSE requests in the kernel can be found in ```bpf/extfuse.c```.
++Once you build the library, compiled eBPF bytecode can be found in ```src/extfuse.o```.
++
++Finally, you will also need a modified FUSE library. To clone its source repo:
++```
++$ git clone --branch ExtFUSE-1.0 https://github.com/extfuse/libfuse
++```
++Follow instructions [here](https://github.com/libfuse/libfuse/blob/fuse_3_0_bugfix/README.md) to build libfuse. **NOTE** that you will need to run ```./makeconf.sh``` to create the ```configure``` script.
++
++You can test ExtFUSE functionality with a simple stackable FUSE file system [here](https://github.com/ashishbijlani/StackFS). **NOTE** that you will need to copy ```$EXTFUSE_REPO_PATH/src/extfuse.o``` to ```/tmp``` before you test StackFS because the name and path is hard-coded in ```StackFS_LL.c```.
++```
++$ git clone https://github.com/ashishbijlani/StackFS
++$ cd StackFS
++$ make
++$ cp $EXTFUSE_REPO_PATH/bpf/extfuse.o /tmp/.
++$ sudo sh -c "LD_LIBRARY_PATH=$EXTFUSE_REPO_PATH ./StackFS_ll -o max_write=131072 -o writeback_cache -o splice_read -o splice_write -o splice_move -r $ROOT_DIR $MNT_DIR -o allow_other"
++```
++
++* [Open Source Summit, 2018 Presentation](https://events.linuxfoundation.org/wp-content/uploads/2017/11/When-eBPF-Meets-FUSE-Improving-Performance-of-User-File-Systems-Ashish-Bijlani-Georgia-Tech.pdf)
++
++* [LPC'18 Video](https://www.youtube.com/watch?v=XmoJCHNEp2w)
++
++* If you use this work for your research, we would deep appreciate a citation to our USENIX ATC '19 [Paper](https://www.usenix.org/system/files/atc19-bijlani.pdf)
++
++```
++@inproceedings {234870,
++author = {Ashish Bijlani and Umakishore Ramachandran},
++title = {Extension Framework for File Systems in User space},
++booktitle = {2019 {USENIX} Annual Technical Conference ({USENIX} {ATC} 19)},
++year = {2019},
++isbn = {978-1-939133-03-8},
++address = {Renton, WA},
++pages = {121--134},
++url = {https://www.usenix.org/conference/atc19/presentation/bijlani},
++publisher = {{USENIX} Association},
++}
++```
+diff --git a/bpf/attr.h b/bpf/attr.h
+new file mode 100644
+index 0000000000000000000000000000000000000000..43ad221d4aba89b28fb756c475c3f4cb55fec2ee
+--- /dev/null
++++ b/bpf/attr.h
+@@ -0,0 +1,21 @@
++#ifndef __EBPF_ATTR_H__
++#define __EBPF_ATTR_H__
++
++#include <linux/fuse.h>
++
++typedef struct lookup_attr_key {
++    /* node id */
++    uint64_t nodeid;
++} lookup_attr_key_t;
++
++typedef struct lookup_attr_value {
++	uint32_t stale;
++	/* node attr */
++    struct fuse_attr_out out;
++} lookup_attr_val_t;
++
++/* number of entries in hash lookup table */
++#undef MAX_ENTRIES
++#define MAX_ENTRIES (2 << 16)
++
++#endif /* __EBPF_ATTR_H__ */
+diff --git a/bpf/extfuse.c b/bpf/extfuse.c
+new file mode 100644
+index 0000000000000000000000000000000000000000..ffef968f481adadee31bb82d88042ab38161be12
+--- /dev/null
++++ b/bpf/extfuse.c
+@@ -0,0 +1,532 @@
++/*
++ * This module has the kernel code for ExtFUSE
++ */
++#define KBUILD_MODNAME "extfuse"
++#include <uapi/linux/bpf.h>
++#include "bpf_helpers.h"
++
++#include <linux/version.h>
++#include <linux/fs.h>
++#include <linux/file.h>
++#include <linux/fs_stack.h>
++
++#include <ebpf.h>
++#include <extfuse.h>
++
++#include "lookup.h"
++#include "attr.h"
++
++/********************************************************************
++	HELPERS
++*********************************************************************/
++
++//#define DEBUGNOW
++
++/* #define HAVE_PASSTHRU */
++
++#ifndef DEBUGNOW
++#define PRINTK(fmt, ...)
++#else
++#define PRINTK(fmt, ...)                                               \
++                ({                                                      \
++                        char ____fmt[] = fmt;                           \
++                        bpf_trace_printk(____fmt, sizeof(____fmt),      \
++                                     ##__VA_ARGS__);                    \
++                })
++#endif
++
++#define HANDLER(F) SEC("extfuse/"__stringify(F)) int bpf_func_##F
++
++/*
++	BPF_MAP_TYPE_PERCPU_HASH: each CPU core gets its own hash-table.
++	BPF_MAP_TYPE_LRU_PERCPU_HASH: all cores share one hash-table but have they own LRU structures of the table.
++*/
++struct bpf_map_def SEC("maps") entry_map = {
++	.type			= BPF_MAP_TYPE_HASH,	// simple hash list
++	.key_size		= sizeof(lookup_entry_key_t),
++	.value_size		= sizeof(lookup_entry_val_t),
++	.max_entries	= MAX_ENTRIES,
++	.map_flags		= BPF_F_NO_PREALLOC,
++};
++
++/* order of maps is important */
++struct bpf_map_def SEC("maps") attr_map = {
++	.type			= BPF_MAP_TYPE_HASH,	// simple hash list
++	.key_size		= sizeof(lookup_attr_key_t),
++	.value_size		= sizeof(lookup_attr_val_t),
++	.max_entries	= MAX_ENTRIES,
++	.map_flags		= BPF_F_NO_PREALLOC,
++};
++
++/* BPF_MAP_TYPE_PROG_ARRAY must ALWAYS be the last one */
++struct bpf_map_def SEC("maps") handlers = {
++   .type = BPF_MAP_TYPE_PROG_ARRAY,
++   .key_size = sizeof(u32),
++   .value_size = sizeof(u32),
++   .max_entries = FUSE_OPS_COUNT << 1,
++};
++
++int SEC("extfuse") fuse_xdp_main_handler(void *ctx)
++{
++    struct extfuse_req *args = (struct extfuse_req *)ctx;
++    int opcode = (int)args->in.h.opcode;
++
++    PRINTK("Opcode %d\n", opcode);
++
++	bpf_tail_call(ctx, &handlers, opcode);
++	return UPCALL;
++}
++
++static int gen_entry_key(void *ctx, int param, const char *op, lookup_entry_key_t *key)
++{
++	int64_t ret = bpf_extfuse_read_args(ctx, NODEID, &key->nodeid, sizeof(u64));
++	if (ret < 0) {
++		PRINTK("%s: Failed to read nodeid: %d!\n", op, ret);
++		return ret;
++	}
++
++	ret = bpf_extfuse_read_args(ctx, param, key->name, NAME_MAX);
++	if (ret < 0) {
++		PRINTK("%s: Failed to read param %d: %d!\n", op, param, ret);
++		return ret;
++	}
++
++	return 0;	
++}
++
++static int gen_attr_key(void *ctx, int param, const char *op, lookup_attr_key_t *key)
++{
++	int64_t ret = bpf_extfuse_read_args(ctx, NODEID, &key->nodeid, sizeof(u64));
++	if (ret < 0) {
++		PRINTK("%s: Failed to read nodeid: %d!\n", op, ret);
++		return ret;
++	}
++
++	return 0;
++}
++
++static void create_lookup_entry(struct fuse_entry_out *out,
++				lookup_entry_val_t *entry, struct fuse_attr_out *attr)
++{
++	memset(out, 0, sizeof(*out));
++	out->nodeid				= entry->nodeid;
++	out->generation			= entry->generation;
++	out->entry_valid		= entry->entry_valid;
++	out->entry_valid_nsec	= entry->entry_valid_nsec;
++	if (attr) {
++		out->attr_valid			= attr->attr_valid;
++		out->attr_valid_nsec	= attr->attr_valid_nsec;
++    	out->attr.ino			= attr->attr.ino;
++    	out->attr.mode			= attr->attr.mode;
++    	out->attr.nlink			= attr->attr.nlink;
++    	out->attr.uid			= attr->attr.uid;
++    	out->attr.gid			= attr->attr.gid;
++    	out->attr.rdev			= attr->attr.rdev;
++    	out->attr.size			= attr->attr.size;
++    	out->attr.blksize		= attr->attr.blksize;
++    	out->attr.blocks		= attr->attr.blocks;
++    	out->attr.atime			= attr->attr.atime;
++    	out->attr.mtime			= attr->attr.mtime;
++    	out->attr.ctime			= attr->attr.ctime;
++    	out->attr.atimensec		= attr->attr.atimensec;
++    	out->attr.mtimensec		= attr->attr.mtimensec;
++    	out->attr.ctimensec		= attr->attr.ctimensec;
++	}
++}
++
++HANDLER(FUSE_LOOKUP)(void *ctx)
++{
++	struct extfuse_req *args = (struct extfuse_req *)ctx;
++	//unsigned numargs = args->in.numargs;
++	int ret = UPCALL;
++
++#ifdef DEBUGNOW
++	u64 nid = args->in.h.nodeid;
++	const char *name = (const char *)args->in.args[0].value;
++	const unsigned int len = args->in.args[0].size - 1;
++
++	PRINTK("LOOKUP: parent nodeid: 0x%llx name: %s(%d)\n",
++			nid, name, len);
++#endif
++
++	lookup_entry_key_t key = {0, {0}};
++
++	memset(key.name, 0, NAME_MAX);
++	ret = gen_entry_key(ctx, IN_PARAM_0_VALUE, "LOOKUP", &key);
++	if (ret < 0)
++		return UPCALL;
++
++	//PRINTK("key name: %s nodeid: 0x%llx\n", key.name, key.nodeid);
++	
++	lookup_entry_val_t *entry = bpf_map_lookup_elem(&entry_map, &key);
++	if (!entry || entry->stale) {
++		if (entry && entry->stale)
++			PRINTK("LOOKUP: STALE key name: %s nodeid: 0x%llx\n",
++				key.name, key.nodeid);
++		else
++			PRINTK("LOOKUP: No entry for node %s\n", key.name);
++		return UPCALL;
++	}
++
++	PRINTK("LOOKUP(0x%llx, %s): nlookup %lld\n",
++		key.nodeid, key.name, entry->nlookup);
++
++	/* prepare output */
++	struct fuse_entry_out out;
++	uint64_t nodeid = entry->nodeid;
++
++
++	/* negative entries have no attr */
++	if (!nodeid) {
++		create_lookup_entry(&out, entry, NULL);
++	} else {
++		lookup_attr_val_t *attr = bpf_map_lookup_elem(&attr_map, &nodeid);
++		if (!attr || attr->stale) {
++			if (attr && attr->stale)
++				PRINTK("LOOKUP: STALE attr for node: 0x%llx\n", nodeid);
++			else {
++				PRINTK("LOOKUP: No attr for node 0x%llx\n", nodeid);
++				return UPCALL;
++			}
++		}
++
++		PRINTK("LOOKUP nodeid 0x%llx attr ino: 0x%llx\n",
++				entry->nodeid, attr->out.attr.ino);
++
++		create_lookup_entry(&out, entry, &attr->out);
++	}
++
++	/* populate output */
++	ret = bpf_extfuse_write_args(ctx, OUT_PARAM_0, &out, sizeof(out));
++	if (ret) {
++		PRINTK("LOOKUP: Failed to write param 0: %d!\n", ret);
++		return UPCALL;
++	}
++
++	/* atomic incr to avoid data races with user/other cpus */
++	__sync_fetch_and_add(&entry->nlookup, 1);
++	return RETURN;
++}
++
++HANDLER(FUSE_GETATTR)(void *ctx)
++{
++	lookup_attr_key_t key = {0};
++	int ret = gen_attr_key(ctx, IN_PARAM_0_VALUE, "GETATTR", &key);
++	if (ret < 0)
++		return UPCALL;
++
++	/* get cached attr value */
++	lookup_attr_val_t *attr = bpf_map_lookup_elem(&attr_map, &key);
++	if (!attr) {
++		PRINTK("GETATTR: No attr for node 0x%llx\n", key.nodeid);
++		return UPCALL;
++	}
++
++	/* check if the attr is stale */
++	if (attr->stale) {
++		/* what does the caller want? */
++		struct fuse_getattr_in inarg;
++		ret = bpf_extfuse_read_args(ctx, IN_PARAM_0_VALUE, &inarg, sizeof(inarg));
++		if (ret < 0) {
++			PRINTK("GETATTR: Failed to read param 0: %d!\n", ret);
++			return UPCALL;
++		}
++
++		/* check if the attr that the caller wants is stale */
++		if (attr->stale & inarg.dummy) {
++			PRINTK("GETATTR: STALE attr mask: 0x%x stale: 0x%x for node: 0x%llx\n",
++				inarg.dummy, attr->stale, key.nodeid);
++			return UPCALL;
++		}
++	}
++
++	PRINTK("GETATTR(0x%llx): %lld\n", key.nodeid, attr->out.attr.ino);
++
++	/* populate output */
++	ret = bpf_extfuse_write_args(ctx, OUT_PARAM_0, &attr->out, sizeof(attr->out));
++	if (ret) {
++		PRINTK("GETATTR: Failed to write param 0: %d!\n", ret);
++		return UPCALL;
++	}
++
++	return RETURN;
++}
++
++HANDLER(FUSE_READ)(void *ctx)
++{
++	lookup_attr_key_t key = {0};
++	int ret = gen_attr_key(ctx, IN_PARAM_0_VALUE, "READ", &key);
++	if (ret < 0)
++		return UPCALL;
++
++	/* get cached attr value */
++	lookup_attr_val_t *attr = bpf_map_lookup_elem(&attr_map, &key);
++	if (!attr)
++		return UPCALL;
++
++#ifndef HAVE_PASSTHRU
++	if (attr->stale & FATTR_ATIME)
++			return UPCALL;
++#endif
++
++	/* mark as stale to prevent future references to cached attrs */
++	__sync_fetch_and_add(&attr->stale, FATTR_ATIME);									
++																			
++	/* delete to prevent future cached attrs */
++	//bpf_map_delete_elem(&attr_map, &key.nodeid);
++	PRINTK("READ: marked stale attr for node 0x%llx\n", key.nodeid);
++
++#ifdef HAVE_PASSTHRU
++	return PASSTHRU;
++#else
++	return UPCALL;
++#endif
++}
++
++HANDLER(FUSE_WRITE)(void *ctx)
++{
++	lookup_attr_key_t key = {0};
++	int ret = gen_attr_key(ctx, IN_PARAM_0_VALUE, "WRITE", &key);
++	if (ret < 0)
++		return UPCALL;
++
++	/* get cached attr value */
++	lookup_attr_val_t *attr = bpf_map_lookup_elem(&attr_map, &key);
++	if (!attr)
++		return UPCALL;
++
++#ifndef HAVE_PASSTHRU
++	if (attr->stale & (FATTR_ATIME | FATTR_SIZE | FATTR_MTIME))
++		return UPCALL;
++#endif
++	/* mark as stale to prevent future references to cached attrs */
++	__sync_fetch_and_add(&attr->stale, (FATTR_ATIME | FATTR_SIZE | FATTR_MTIME));
++
++	/* delete to prevent future cached attrs */
++	//bpf_map_delete_elem(&attr_map, &key.nodeid);
++	PRINTK("WRITE: marked stale attr for node 0x%llx\n", key.nodeid);
++
++#ifdef HAVE_PASSTHRU
++	return PASSTHRU;
++#else
++	return UPCALL;
++#endif
++}
++
++HANDLER(FUSE_SETATTR)(void *ctx)
++{
++	lookup_attr_key_t key = {0};
++	int ret = gen_attr_key(ctx, IN_PARAM_0_VALUE, "SETATTR", &key);
++	if (ret < 0)
++		return UPCALL;
++
++	/* delete to prevent future cached attrs */
++	bpf_map_delete_elem(&attr_map, &key.nodeid);
++	PRINTK("SETATTR: deleted stale attr for node 0x%llx\n", key.nodeid);
++
++	return UPCALL;
++}
++
++HANDLER(FUSE_GETXATTR)(void *ctx)
++{
++	PRINTK("GETXATTR: returning ENODATA\n");
++	return -ENODATA;
++}
++
++HANDLER(FUSE_FLUSH)(void *ctx)
++{
++	return RETURN;
++}
++
++#ifndef DEBUGNOW
++static int remove(void *ctx, int param, char *op, lookup_entry_key_t *key)
++{																			
++	memset(key->name, 0, NAME_MAX);											
++																			
++	if (gen_entry_key(ctx, param, op, key))								
++		return UPCALL;														
++																			
++	/* lookup entry using its key <parent inode number, name> */			
++	lookup_entry_val_t *entry = bpf_map_lookup_elem(&entry_map, key);		
++	if (!entry || entry->stale)												
++		return UPCALL;														
++																			
++	/* mark as stale to prevent future cached lookups for this entry */		
++	__sync_fetch_and_add(&entry->stale, 1);									
++																			
++	PRINTK("%s key name: %s nodeid: 0x%llx", op, key->name, key->nodeid);		
++	PRINTK("\t nlookup %lld Marked Stale!\n", entry->nlookup);				
++																			
++	/*																		
++	 * if the entry is negative (i.e., nodeid=0) or has only one reference	
++	 * (i.e., nlookup=1), delete it because the user-space does not track	
++	 * negative entries, and knows about entries with single reference.		
++	 */																		
++	uint64_t nodeid = entry->nodeid;										
++	if (nodeid) {															
++		bpf_map_delete_elem(&attr_map, &nodeid);							
++		PRINTK("\t Deleted stale attr for node 0x%llx\n", nodeid);			
++	}																		
++	if (entry->nlookup <= 1) {												
++		bpf_map_delete_elem(&entry_map, key);								
++		PRINTK("\t Deleted stale node 0x%llx\n", nodeid);					
++	}																		
++																			
++	return UPCALL;															
++}
++#endif
++
++HANDLER(FUSE_RENAME)(void *ctx)
++{
++#ifndef DEBUGNOW
++	lookup_entry_key_t key = {0, {0}};										
++	remove(ctx, IN_PARAM_1_VALUE, "RENAME", &key);
++	return remove(ctx, IN_PARAM_2_VALUE, "RENAME", &key);
++#else
++	lookup_entry_key_t key = {0, {0}};
++
++	/* do it for IN_PARAM_1_VALUE */
++	memset(key.name, 0, NAME_MAX);
++	if (gen_entry_key(ctx, IN_PARAM_1_VALUE, "RENAME", &key))
++		return UPCALL;
++
++	/* lookup by key */
++	lookup_entry_val_t *entry = bpf_map_lookup_elem(&entry_map, &key);
++	if (!entry || entry->stale)
++		return UPCALL;
++
++	/* mark as stale to prevent future lookups */
++	__sync_fetch_and_add(&entry->stale, 1);
++
++	PRINTK("RENAME key name: %s nodeid: 0x%llx nlookup %lld Marked Stale!\n",
++		key.name, key.nodeid, entry->nlookup);
++
++	/*
++	 * if the entry is negative (i.e., nodeid=0) or has only one reference
++	 * (i.e., nlookup=1), delete it because the user-space does not track
++	 * negative entries, and knows about entries with single reference.
++	 */
++	uint64_t nodeid = entry->nodeid;
++	if (nodeid) {
++		bpf_map_delete_elem(&attr_map, &nodeid);
++		PRINTK("\t Deleted stale attr for node 0x%llx\n", nodeid);
++	}
++	if (entry->nlookup <= 1) {
++		bpf_map_delete_elem(&entry_map, &key);
++		PRINTK("\t Deleted stale node 0x%llx\n", nodeid);
++	}
++
++	/* do it for IN_PARAM_2_VALUE */
++	memset(key.name, 0, NAME_MAX);
++	if (gen_entry_key(ctx, IN_PARAM_2_VALUE, "RENAME", &key))
++		return UPCALL;
++
++	/* lookup by key */
++	entry = bpf_map_lookup_elem(&entry_map, &key);
++	if (!entry || entry->stale)
++		return UPCALL;
++
++	/* mark as stale to prevent future lookups */
++	__sync_fetch_and_add(&entry->stale, 1);
++
++	PRINTK("RENAME key name: %s nodeid: 0x%llx nlookup %lld Marked Stale!\n",
++		key.name, key.nodeid, entry->nlookup);
++
++	/*
++	 * if the entry is negative (i.e., nodeid=0) or has only one reference
++	 * (i.e., nlookup=1), delete it because the user-space does not track
++	 * negative entries, and knows about entries with single reference.
++	 */
++	nodeid = entry->nodeid;
++	if (nodeid) {
++		bpf_map_delete_elem(&attr_map, &nodeid);
++		PRINTK("\t Deleted stale attr for node 0x%llx\n", nodeid);
++	}
++	if (entry->nlookup <= 1) {
++		bpf_map_delete_elem(&entry_map, &key);
++		PRINTK("\t Deleted stale node 0x%llx\n", nodeid);
++	}
++
++	return UPCALL;
++#endif
++}
++
++HANDLER(FUSE_RMDIR)(void *ctx)
++{
++#ifndef DEBUGNOW
++	lookup_entry_key_t key = {0, {0}};										
++	return remove(ctx, IN_PARAM_0_VALUE, "RMDIR", &key);
++#else
++	lookup_entry_key_t key = {0, {0}};
++	memset(key.name, 0, NAME_MAX);
++	if (gen_entry_key(ctx, IN_PARAM_0_VALUE, "RMDIR", &key))
++		return UPCALL;
++
++	/* lookup by key */
++	lookup_entry_val_t *entry = bpf_map_lookup_elem(&entry_map, &key);
++	if (!entry || entry->stale)
++		return UPCALL;
++
++	/* mark as stale to prevent future lookups */
++	__sync_fetch_and_add(&entry->stale, 1);
++
++	PRINTK("RMDIR key name: %s nodeid: 0x%llx nlookup %lld Marked Stale!\n",
++		key.name, key.nodeid, entry->nlookup);
++
++	/*
++	 * if the entry is negative (i.e., nodeid=0) or has only one reference
++	 * (i.e., nlookup=1), delete it because the user-space does not track
++	 * negative entries, and knows about entries with single reference.
++	 */
++	uint64_t nodeid = entry->nodeid;
++	if (nodeid) {
++		bpf_map_delete_elem(&attr_map, &nodeid);
++		PRINTK("\t Deleted stale attr for node 0x%llx\n", nodeid);
++	}
++	if (entry->nlookup <= 1) {
++		bpf_map_delete_elem(&entry_map, &key);
++		PRINTK("\t Deleted stale node 0x%llx\n", nodeid);
++	}
++
++	return UPCALL;
++#endif
++}
++
++HANDLER(FUSE_UNLINK)(void *ctx)
++{
++#ifndef DEBUGNOW
++	lookup_entry_key_t key = {0, {0}};
++	return remove(ctx, IN_PARAM_0_VALUE, "UNLINK", &key);
++#else
++	lookup_entry_key_t key = {0, {0}};
++	memset(key.name, 0, NAME_MAX);
++	if (gen_entry_key(ctx, IN_PARAM_0_VALUE, "UNLINK", &key))
++		return UPCALL;
++
++	/* lookup by key */
++	lookup_entry_val_t *entry = bpf_map_lookup_elem(&entry_map, &key);
++	if (!entry || entry->stale)
++		return UPCALL;
++
++	/* mark as stale to prevent future lookups */
++	__sync_fetch_and_add(&entry->stale, 1);
++
++	PRINTK("UNLINK key name: %s nodeid: 0x%llx nlookup %lld Marked Stale!\n",
++		key.name, key.nodeid, entry->nlookup);
++
++	uint64_t nodeid = entry->nodeid;
++	if (nodeid) {
++		bpf_map_delete_elem(&attr_map, &nodeid);
++		PRINTK("\t Deleted stale attr for node 0x%llx\n", nodeid);
++	}
++	if (entry->nlookup <= 1) {
++		bpf_map_delete_elem(&entry_map, &key);
++		PRINTK("\t Deleted stale node 0x%llx\n", nodeid);
++	}
++
++	return UPCALL;
++#endif
++}
++
++char _license[] SEC("license") = "GPL";
++uint32_t _version SEC("version") = LINUX_VERSION_CODE;
+diff --git a/bpf/lookup.h b/bpf/lookup.h
+new file mode 100644
+index 0000000000000000000000000000000000000000..c3166b56689894cef452e7b191cc84a9ddbb9414
+--- /dev/null
++++ b/bpf/lookup.h
+@@ -0,0 +1,23 @@
++#ifndef __EBPF_LOOKUP_H__
++#define __EBPF_LOOKUP_H__
++
++typedef struct lookup_entry_key {
++    /* parent node id */
++    uint64_t nodeid;
++    /* node name */
++    char name[NAME_MAX];
++} lookup_entry_key_t;
++
++typedef struct lookup_entry_value {
++	uint32_t stale;
++    uint64_t nlookup;	/* ref cnt */
++    uint64_t nodeid;	/* child node id */
++    uint64_t generation;
++    uint64_t entry_valid;
++    uint32_t entry_valid_nsec;
++} lookup_entry_val_t;
++
++/* number of entries in hash lookup table */
++#define MAX_ENTRIES (2 << 16)
++
++#endif /* __EBPF_LOOKUP_H__ */
+diff --git a/include/ebpf.h b/include/ebpf.h
+new file mode 100644
+index 0000000000000000000000000000000000000000..fa24f3efb4d3ae45bc36ec8bacd2aa4a66277339
+--- /dev/null
++++ b/include/ebpf.h
+@@ -0,0 +1,52 @@
++/* ExtFUSE library */
++#ifndef __LIBEXTFUSE_H
++#define __LIBEXTFUSE_H
++
++#ifdef __KERNEL__
++#include <linux/types.h>
++#else
++#include <stdint.h>
++#endif
++
++#define PASSTHRU 1
++#define RETURN 0
++#define UPCALL -ENOSYS
++
++#ifndef MAX_MAPS
++#undef MAX_MAPS
++#define MAX_MAPS 32
++#endif
++
++typedef struct ebpf_context {
++        int ctrl_fd;
++        int data_fd[MAX_MAPS];
++}ebpf_context_t;
++
++typedef struct ebpf_ctrl_key {
++	int opcode;
++} ebpf_ctrl_key_t;
++
++typedef struct ebpf_handler {
++	int prog_fd; 
++} ebpf_handler_t;
++
++/* init/finalize */
++ebpf_context_t* ebpf_init(char *filename);
++void ebpf_fini(ebpf_context_t *con);
++
++/* updating rules */
++int ebpf_ctrl_update(ebpf_context_t *context,
++                ebpf_ctrl_key_t *key,
++                ebpf_handler_t *handler);
++
++int ebpf_ctrl_delete(ebpf_context_t *context,
++                ebpf_ctrl_key_t *key);
++
++/* Data handling abstractions */
++int ebpf_data_next(ebpf_context_t *context, void *key, void *next, int idx);
++int ebpf_data_lookup(ebpf_context_t *context, void *key, void *val, int idx);
++int ebpf_data_update(ebpf_context_t *context, void *key, void *val, int idx,
++		int overwrite);
++int ebpf_data_delete(ebpf_context_t *context, void *key, int idx);
++
++#endif
+diff --git a/include/extfuse.h b/include/extfuse.h
+new file mode 100644
+index 0000000000000000000000000000000000000000..65cca8688e83debdbb8c9ab884619756fd874152
+--- /dev/null
++++ b/include/extfuse.h
+@@ -0,0 +1,56 @@
++#ifndef __EXTFUSE_H__
++#define __EXTFUSE_H__
++
++#include <linux/fuse.h>
++#include <linux/extfuse.h>
++
++/* This is taken from Linux source */
++#include <extfuse_i.h>
++
++#define FUSE_LOOKUP   	   1
++#define FUSE_FORGET   	   2
++#define FUSE_GETATTR  	   3
++#define FUSE_SETATTR  	   4
++#define FUSE_READLINK 	   5
++#define FUSE_SYMLINK  	   6
++#define FUSE_MKNOD    	   8
++#define FUSE_MKDIR    	   9
++#define FUSE_UNLINK   	   10
++#define FUSE_RMDIR    	   11
++#define FUSE_RENAME   	   12
++#define FUSE_LINK     	   13
++#define FUSE_OPEN     	   14
++#define FUSE_READ     	   15
++#define FUSE_WRITE    	   16
++#define FUSE_STATFS   	   17
++#define FUSE_RELEASE       18
++#define FUSE_FSYNC         20
++#define FUSE_SETXATTR      21
++#define FUSE_GETXATTR      22
++#define FUSE_LISTXATTR     23
++#define FUSE_REMOVEXATTR   24
++#define FUSE_FLUSH         25
++#define FUSE_INIT          26
++#define FUSE_OPENDIR       27
++#define FUSE_READDIR       28
++#define FUSE_RELEASEDIR    29
++#define FUSE_FSYNCDIR      30
++#define FUSE_GETLK         31
++#define FUSE_SETLK         32
++#define FUSE_SETLKW        33
++#define FUSE_ACCESS        34
++#define FUSE_CREATE        35
++#define FUSE_INTERRUPT     36
++#define FUSE_BMAP          37
++#define FUSE_DESTROY       38
++#define FUSE_IOCTL         39
++#define FUSE_POLL          40
++#define FUSE_NOTIFY_REPLY  41
++#define FUSE_BATCH_FORGET  42
++#define FUSE_FALLOCATE     43
++#define FUSE_READDIRPLUS   44
++#define FUSE_RENAME2       45
++#define FUSE_LSEEK         46
++#define FUSE_OPS_COUNT		64
++
++#endif /* __EXTFUSE_H__ */
+diff --git a/include/utils.h b/include/utils.h
+new file mode 100644
+index 0000000000000000000000000000000000000000..bd5deb11769c099be0158b53836737ed8c6f1dd6
+--- /dev/null
++++ b/include/utils.h
+@@ -0,0 +1,28 @@
++#ifndef __UTILS_H__
++#define __UTILS_H__
++
++#include <sys/types.h>
++
++/* A simple error-handling function: print an error message based
++   on the value in 'errno' and terminate the calling process */
++#define errExit(msg)    do { perror(msg); goto error; } while (0)
++
++enum {
++	SETGROUPS_NONE = -1,
++	SETGROUPS_DENY = 0,
++	SETGROUPS_ALLOW = 1,
++};
++
++#define ROOT_UID "0"
++#define ROOT_GID "0"
++
++void stats(const char *msg);
++int setgroups_control(pid_t pid, int action);
++int update_uid_map(pid_t pid, const char *inside_id, int outside_id, int v);
++int update_gid_map(pid_t pid, const char *inside_id, int outside_id, int v);
++int update_map(char *mapping, char *map_file);
++void reset_caps(void);
++void display_creds_and_caps(char *str);
++void print_mount_points(void);
++
++#endif /* __UTILS_H__ */
+diff --git a/src/ebpf.c b/src/ebpf.c
+new file mode 100644
+index 0000000000000000000000000000000000000000..26d0c6f37c957940e8041fd41c70ecba31a2b8c1
+--- /dev/null
++++ b/src/ebpf.c
+@@ -0,0 +1,136 @@
++/* ExtFUSE library */
++#include <stdio.h>
++#include <stdint.h>
++#include <errno.h>
++#include <stdlib.h>
++#include <unistd.h>
++#include <string.h>
++#include <linux/bpf.h>
++#include <linux/version.h>
++#include <sys/wait.h>
++#include <sys/stat.h>
++#include <sys/resource.h>
++
++#include <ebpf.h>
++#include <libbpf.h>
++#include <bpf_load.h>
++
++#if LINUX_VERSION_CODE <= KERNEL_VERSION(4,9,0)
++#define bpf_map_update_elem bpf_update_elem
++#define bpf_map_lookup_elem bpf_lookup_elem
++#define bpf_map_delete_elem bpf_delete_elem
++#endif
++
++//#define DEBUG
++
++#ifdef DEBUG
++#define DBG(fmt, ...)   fprintf(stdout, fmt, ##__VA_ARGS__)
++#else
++#define DBG(fmt, ...)
++#endif
++#define ERROR(fmt, ...) fprintf(stderr, fmt, ##__VA_ARGS__)
++
++ebpf_context_t* ebpf_init(char *filename)
++{
++	int i;
++    struct rlimit r = {RLIM_INFINITY, RLIM_INFINITY};
++    ebpf_context_t *con;
++	uid_t uid=getuid();
++
++	if (!uid && setrlimit(RLIMIT_MEMLOCK, &r)) {
++		ERROR("Failed to increase rlimits: %s\n", strerror(errno));
++    }
++
++	con = (ebpf_context_t* ) calloc(1, sizeof(ebpf_context_t));
++	if (!con) {
++		ERROR("Failed to allocate memory\n");
++		goto err;
++	}
++
++    if (load_bpf_file(filename)) {
++		ERROR("Failed to load bpf file %s: %s\n",
++				filename, strerror(errno));
++		goto err;
++    }
++
++    if (!prog_fd[0] || !map_fd[0]) {
++		ERROR("invalid prog_fd[0]=%d and map_fd[0]=%d\n",
++			prog_fd[0], map_fd[0]);
++		goto err;
++    }
++
++	con->ctrl_fd = prog_fd[0];
++	for (i = 0; i < MAX_MAPS; i++)
++		con->data_fd[i] = map_fd[i];
++
++	DBG("main context created 0x%lx ctrl_fd=%d data_fd=%d\n",
++		(unsigned long)con, con->ctrl_fd, con->data_fd);
++    return con;
++
++err:
++	if (con)
++		free(con);
++	return NULL;
++}
++
++void ebpf_fini(ebpf_context_t *con)
++{
++	int i;
++	DBG("freeing main context 0x%lx ctrl_fd=%d data_fd=%d\n",
++		(unsigned long)con, con->ctrl_fd, con->data_fd);
++	if (con->ctrl_fd && close(con->ctrl_fd))
++		ERROR("Failed to close ctrl_fd %d: %s!",
++			con->ctrl_fd, strerror(errno));
++	for (i = 0; i < MAX_MAPS; i++)
++		if (con->data_fd[i] && close(con->data_fd[i]))
++			ERROR("Failed to close data_fd %d: %s!",
++				con->data_fd[i], strerror(errno));
++	free(con);
++	return;
++}
++
++/* Control handling abstractions */
++int ebpf_ctrl_update(ebpf_context_t *context,
++                ebpf_ctrl_key_t *key,
++                ebpf_handler_t *handler)
++{
++	unsigned long long flags = BPF_ANY;
++	return bpf_map_update_elem(context->ctrl_fd, (void *) key,
++                        (void *) handler, flags);
++}
++
++int ebpf_ctrl_delete(ebpf_context_t *context,
++                ebpf_ctrl_key_t *key)
++{
++	return bpf_map_delete_elem(context->ctrl_fd, (void *) key);
++}
++
++int ebpf_data_next(ebpf_context_t *context, void *key, void *next, int idx)
++{
++	DBG("ebpf_next_data fd: %d\n", context->data_fd[idx]);
++	return bpf_map_get_next_key(context->data_fd[idx], &key, &next);
++}
++
++/* Data handling abstractions */
++int ebpf_data_lookup(ebpf_context_t *context, void *key, void *val, int idx)
++{
++	DBG("ebpf_data_lookup fd: %d\n", context->data_fd[idx]);
++	return bpf_map_lookup_elem(context->data_fd[idx], key, val);
++}
++
++int ebpf_data_update(ebpf_context_t *context, void *key, void *val, int idx,
++		int overwrite)
++{
++	unsigned long long flags = BPF_NOEXIST;
++	if (overwrite)
++		flags = BPF_ANY;
++	DBG("ebpf_data_update fd: %d\n", context->data_fd[idx]);
++	return bpf_map_update_elem(context->data_fd[idx], key, val, flags);
++}
++
++int ebpf_data_delete(ebpf_context_t *context, void *key, int idx)
++{
++	DBG("ebpf_data_delete fd: %d\n", context->data_fd[idx]);
++	return bpf_map_delete_elem(context->data_fd[idx], key);
++}
++
+diff --git a/src/utils.c b/src/utils.c
+new file mode 100644
+index 0000000000000000000000000000000000000000..9a38db63e45b9769eebb2d49374761d7dff72f47
+--- /dev/null
++++ b/src/utils.c
+@@ -0,0 +1,194 @@
++/* Run this program as root.  As mount and unshare requires higher privileges. */
++#define _GNU_SOURCE
++#include <sched.h>
++#include <unistd.h>
++#include <fcntl.h>
++#include <sys/stat.h>
++#include <sys/types.h>
++#include <sys/mount.h>
++#include <stdlib.h>
++#include <stdio.h>
++#include <string.h>
++#include <limits.h>
++#include <errno.h>
++#include <sys/mount.h>
++#include <unistd.h>
++#include <sys/syscall.h>
++
++#include <ebpf.h>
++
++#include <mntent.h>
++#include <sys/capability.h>
++#include <sys/prctl.h>
++#include <sys/mount.h>
++#include <grp.h>
++
++#include <utils.h>
++
++#define ARRAY_SIZE(x) (sizeof(x) / sizeof((x)[0]))
++
++static const char *setgroups_strings[] =
++{
++	[SETGROUPS_DENY] = "deny",
++	[SETGROUPS_ALLOW] = "allow"
++};
++
++int setgroups_control(pid_t pid, int action)
++{
++    char path[PATH_MAX];
++	const char *cmd;
++	int fd;
++
++	if (action < 0 || (size_t) action >= ARRAY_SIZE(setgroups_strings))
++		return -1;
++
++	cmd = setgroups_strings[action];
++
++    snprintf(path, PATH_MAX, "/proc/%ld/setgroups", (long) pid);
++	fd = open(path, O_WRONLY);
++	if (fd < 0) {
++		if (errno == ENOENT)
++			return -1;
++		fprintf(stderr, "cannot open %s: %s!\n",
++			path, strerror(errno));
++		return -1;
++	}
++
++	if (write(fd, cmd, strlen(cmd)) != strlen(cmd)) {
++		fprintf(stderr, "write failed %s:%s!\n",
++				path, strerror(errno));
++		fprintf(stderr, "%s\n", cmd);
++		return -1;
++	}
++	close(fd);
++	return 0;
++}
++
++/* Update the mapping file 'map_file', with the value provided in
++   'mapping', a string that defines a UID or GID mapping. A UID or
++   GID mapping consists of one or more newline-delimited records
++   of the form:
++
++       ID_inside-ns    ID-outside-ns   length
++
++   Requiring the user to supply a string that contains newlines is
++   of course inconvenient for command-line use. Thus, we permit the
++   use of commas to delimit records in this string, and replace them
++   with newlines before writing the string to the file. */
++int update_map(char *mapping, char *map_file)
++{
++    int fd, j;
++    size_t map_len;     /* Length of 'mapping' */
++
++    /* Replace commas in mapping string with newlines */
++    map_len = strlen(mapping);
++    for (j = 0; j < map_len; j++)
++        if (mapping[j] == ',')
++            mapping[j] = '\n';
++
++    fd = open(map_file, O_RDWR);
++    if (fd == -1) {
++        fprintf(stderr, "open %s: %s\n", map_file, strerror(errno));
++        return -1;
++    }
++
++    if (write(fd, mapping, map_len) != map_len) {
++        fprintf(stderr, "write %s: %s\n", map_file, strerror(errno));
++        return -1;
++    }
++
++    close(fd);
++	return 0;
++}
++
++int update_uid_map(pid_t pid, const char *inside_id, int outside_id, int v)
++{
++    char map_path[PATH_MAX];
++    char uid_map[512];
++	size_t len = strlen(inside_id);
++    sprintf(map_path, "/proc/%ld/uid_map", (long) pid);
++    sprintf(uid_map, "%s %ld %ju", inside_id, (long) outside_id, len);
++    if (update_map(uid_map, map_path))
++		return -1;
++    if (v)
++		printf("Mapped outside user %ld to inside user %s(%d): %s\n",
++			(long) outside_id, inside_id, len, uid_map);
++	return 0;
++}
++
++int update_gid_map(pid_t pid, const char *inside_id, int outside_id, int v)
++{
++    char map_path[PATH_MAX];
++    char gid_map[512];
++	size_t len = strlen(inside_id);
++    sprintf(map_path, "/proc/%ld/gid_map", (long) pid);
++    sprintf(gid_map, "%s %ld %ju", inside_id, (long) outside_id, len);
++    if (update_map(gid_map, map_path))
++		return -1;
++    if (v)
++		printf("Mapped outside group %ld to inside group %s(%d): %s\n",
++			(long) outside_id, inside_id, len, gid_map);
++	return 0;
++}
++
++void reset_caps(void)
++{
++	struct __user_cap_header_struct cap_hdr;
++	cap_hdr.version = _LINUX_CAPABILITY_VERSION_3;
++	cap_hdr.pid = 0;
++	struct __user_cap_data_struct cap_data[_LINUX_CAPABILITY_U32S_3];
++	bzero(cap_data, sizeof(cap_data));
++	if (capset(&cap_hdr, &cap_data[0]) < 0) {
++	        perror("capset()");
++	}
++}
++
++void display_creds_and_caps(char *str)
++{
++    cap_t caps;
++    char *s;
++
++    caps = cap_get_proc();
++    if (caps == NULL) {
++		perror("cap_get_proc");
++		return;
++	}
++
++    s = cap_to_text(caps, NULL);
++    if (s == NULL) {
++        perror("cap_to_text");
++		return;
++	}
++
++	printf("Credentials and Capabilities %s\n\n", s);
++
++    cap_free(caps);
++    cap_free(s);
++}
++
++void print_mount_points(void)
++{
++  struct mntent *ent;
++  FILE *aFile;
++
++  aFile = setmntent("/proc/mounts", "r");
++  if (aFile == NULL) {
++	perror("setmntent");
++	return;
++  }
++
++  printf("Mount Points:\n");
++  while (NULL != (ent = getmntent(aFile)))
++	printf("\t%s %s\n", ent->mnt_fsname, ent->mnt_dir);
++  endmntent(aFile);
++}
++
++void stats(const char *msg)
++{
++	printf("\n%s\n", msg);
++	printf("UID: %d EUID: %d\n", getuid(), geteuid());
++	printf("PID: %d TID: %ld\n", getpid(), syscall(SYS_gettid));
++	print_mount_points();
++	display_creds_and_caps("");
++}
++

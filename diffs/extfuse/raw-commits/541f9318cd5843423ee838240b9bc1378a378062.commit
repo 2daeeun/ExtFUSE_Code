@@ -1,0 +1,8 @@
+tree 4183adebc47bd28c59860168aecb999136bd65da
+parent d9eb0816e22258854f83d14cff8e37fa1e27bfbf
+author Ashish Bijlani <ashish.bijlani@gmail.com> 1595695546 -0500
+committer Ashish Bijlani <ashish.bijlani@gmail.com> 1595695546 -0500
+
+Change SEC in bpf program from 'fuse' to 'extfuse'
+
+Signed-off-by: Ashish Bijlani <ashish.bijlani@gmail.com>

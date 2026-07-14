@@ -1,0 +1,8 @@
+tree 14924c4fd7f0195a7e80a00d284590e64777229d
+parent 632336a462b0763adce80f3738886f1739be47c4
+author Ashish Bijlani <ashish.bijlani@gmail.com> 1594514825 -0500
+committer Ashish Bijlani <ashish.bijlani@gmail.com> 1594514825 -0500
+
+Move extfuse.h from lookup.h to the source file containing bpf code
+
+Signed-off-by: Ashish Bijlani <ashish.bijlani@gmail.com>

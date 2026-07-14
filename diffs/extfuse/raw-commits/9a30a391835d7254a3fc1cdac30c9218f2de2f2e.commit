@@ -1,0 +1,19 @@
+tree fe154453469fea85a7d63e26a6e775159359d435
+parent 96ea8dbfa9561b9539c18f9c230a2532b7b7ed0b
+author Ashish Bijlani <ashish.bijlani@gmail.com> 1590681571 -0500
+committer GitHub <noreply@github.com> 1590681571 -0500
+gpgsig -----BEGIN PGP SIGNATURE-----
+ 
+ wsBcBAABCAAQBQJez9/jCRBK7hj4Ov3rIwAAdHIIAFAatJGBFYuPaGhA/tcmhQdV
+ WVJ1c/QABUD3h9QW3koqAl/FU4Ds7Ayoi7WOIzgOOxR81WXjymAotvTCs9TX9YUS
+ o1Kggp6wkKu94QC83Q5fzECRMKZ5vyTLJqDk24CW1Fter8KNaMEXr6icUMThB029
+ 8SCBfhO9sdt3XQLUweHVlWhLJr3l9KwNWtTgWovIAaAJGwAr+m0aB4FEgaty1nDi
+ wpbSicMDcVasJQkCO0fBkHw0HAs7ZBIWZHp/yqrorTEmniMGDQPvmHsAoGHVEq1v
+ BAcMBkfuVuuQ4cm9SmpPWMKikjMrwrot2OpZr6EIVxZqe1ii/JMTTI+ubifsu1I=
+ =tsIu
+ -----END PGP SIGNATURE-----
+ 
+
+Add detailed kernel compilation instructions.
+
+Add detailed kernel compilation instructions.

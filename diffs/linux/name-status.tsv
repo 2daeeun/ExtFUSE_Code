@@ -1,0 +1,16 @@
+A	Documentation/filesystems/extfuse.txt
+M	MAINTAINERS
+M	fs/fuse/Kconfig
+M	fs/fuse/Makefile
+M	fs/fuse/dev.c
+A	fs/fuse/extfuse.c
+A	fs/fuse/extfuse_i.h
+M	fs/fuse/fuse_i.h
+M	fs/fuse/inode.c
+M	include/linux/bpf_types.h
+M	include/uapi/linux/bpf.h
+A	include/uapi/linux/extfuse.h
+M	include/uapi/linux/fuse.h
+M	samples/bpf/bpf_load.c
+M	tools/include/uapi/linux/bpf.h
+M	tools/testing/selftests/bpf/bpf_helpers.h

@@ -1,0 +1,8 @@
+tree d91039b9f977ade8b1521eb1e0c8c00ad357c455
+parent 7c88efb9d92d64289795e43b2948977c07ccda7f
+author Ashish Bijlani <ashish.bijlani@gmail.com> 1594512054 -0500
+committer Ashish Bijlani <ashish.bijlani@gmail.com> 1594512054 -0500
+
+Use correct FUSE Capability bits and init reply flags for ExtFUSE
+
+Signed-off-by: Ashish Bijlani <ashish.bijlani@gmail.com>

@@ -1,0 +1,17 @@
+tree 11e21a809755b1273fa1b93d1e3c9f0726a5ad68
+parent 9778019eb91931c9d359001a76eeef2686143ca2
+author Ashish Bijlani <ashish.bijlani@gmail.com> 1579972453 -0500
+committer GitHub <noreply@github.com> 1579972453 -0500
+gpgsig -----BEGIN PGP SIGNATURE-----
+ 
+ wsBcBAABCAAQBQJeLHdlCRBK7hj4Ov3rIwAAdHIIABcfIMjPFD23CWM0SEq+geha
+ vzjrcT8QmkWpyETvd48n1EbW7osuefYIv3TKWpkgFlu1QzVxTCqkLyb61dGViW6G
+ oNWb4G4gWa7JYXAoU5lR4uOQBYNfa1os9pvYmNcr/X3k+o1YVxrhlD2nv0L971N5
+ Y6dOOY3rcVcLEN112T9CWPH2t0fbZb5MdxEQeaVpEz2WFxW8OdRk3h7JkElySOhE
+ lwQ+iwAB+vAe1GWzFfk4j8jvWvcFNkvTJJGcMF5LRpeJyl3K7hvBaqdIeWEKDPzl
+ kd1dBBV8QKmuUhMTjrTQmw+M/XacNG2ZFFelcZilEEUUimUyymsoDt+A1Kp32K8=
+ =fk8D
+ -----END PGP SIGNATURE-----
+ 
+
+Update License to LGPL 2.1

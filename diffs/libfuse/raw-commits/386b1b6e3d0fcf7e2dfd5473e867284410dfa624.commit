@@ -1,0 +1,7 @@
+tree d16206c9de6043e78f663b8cfadc835df2981f1e
+parent 4ae8680e40b60d65029f4630c21ab182d3c79e8e
+parent a5a00e9b7dd8c8dfef17523dccb3051e1f1dd5a2
+author Miklos Szeredi <mszeredi@suse.cz> 1443541892 +0200
+committer Miklos Szeredi <mszeredi@suse.cz> 1443541892 +0200
+
+Merge branch 'clone_fd'

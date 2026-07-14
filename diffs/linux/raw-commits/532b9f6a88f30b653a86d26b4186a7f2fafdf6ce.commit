@@ -1,0 +1,12 @@
+tree cf7cf214939248c7ff84f18203d9824e3c051e7d
+parent 29e12e0e834627658bb26be16e7d2ff9bfa2db1c
+author Alessio Balsini <balsini@android.com> 1587656232 +0100
+committer Alessio Balsini <balsini@android.com> 1587658140 +0100
+
+ExtFUSE: add callbacks to scope
+
+The BPF program using ExtFUSE needs access also to the following BPF
+functions: bpf_tail_call and bpf_trace_printk.
+Add these functions to the ExtFUSE program scope.
+
+Signed-off-by: Alessio Balsini <balsini@android.com>

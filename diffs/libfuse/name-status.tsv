@@ -1,0 +1,3 @@
+M	include/fuse_common.h
+M	include/fuse_kernel.h
+M	lib/fuse_lowlevel.c

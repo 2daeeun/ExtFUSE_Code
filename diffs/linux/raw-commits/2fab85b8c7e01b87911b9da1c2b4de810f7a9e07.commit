@@ -1,0 +1,11 @@
+tree 62abb6f715031624ad2d88bba1419f3a6123c708
+parent 164663eb9f6bf2bb9af34cb28660add8c444f964
+author Alessio Balsini <balsini@google.com> 1587659172 +0100
+committer Alessio Balsini <balsini@google.com> 1587659172 +0100
+
+ExtFUSE: fix printk format
+
+An imprecise printk format was causing a warning at compile time.
+Fix by adding the right format (long unsigned).
+
+Signed-off-by: Alessio Balsini <balsini@google.com>

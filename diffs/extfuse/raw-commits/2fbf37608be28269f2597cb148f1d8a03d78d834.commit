@@ -1,0 +1,8 @@
+tree 08c3108b0b112c7deb598869bd0eeb13b4d0177d
+parent 8a742c23dfc4763686968ba8e0eb89bc557b925d
+author Ashish Bijlani <ashish.bijlani@gmail.com> 1599623472 -0500
+committer Ashish Bijlani <ashish.bijlani@gmail.com> 1599623472 -0500
+
+Use only +tive opcodes in the main bpf handler
+
+Signed-off-by: Ashish Bijlani <ashish.bijlani@gmail.com>

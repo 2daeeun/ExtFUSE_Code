@@ -1,0 +1,11 @@
+tree 8cd513569eaf4f00bbbf85cdf943e9953788db8e
+parent 985ed2ef4735fc6858d87bdca379988138f954ab
+author Alessio Balsini <balsini@android.com> 1587655744 +0100
+committer Alessio Balsini <balsini@android.com> 1587658140 +0100
+
+ExtFUSE: update signature and comments for callbacks
+
+Add a brief explanation and update signature of the read and write
+ExtFUSE callbacks.
+
+Signed-off-by: Alessio Balsini <balsini@android.com>

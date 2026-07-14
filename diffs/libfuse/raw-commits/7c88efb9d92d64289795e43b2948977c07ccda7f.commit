@@ -1,0 +1,8 @@
+tree da98288f6b810a6f9c9107a8cb994af7b0e91575
+parent 386b1b6e3d0fcf7e2dfd5473e867284410dfa624
+author Ashish Bijlani <ashish.bijlani@gatech.edu> 1551404678 -0500
+committer Ashish Bijlani <ashish.bijlani@gatech.edu> 1551404678 -0500
+
+Add support for detecting/enabling ExtFUSE
+
+Signed-off-by: Ashish Bijlani <ashish.bijlani@gatech.edu>

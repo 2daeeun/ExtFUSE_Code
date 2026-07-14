@@ -1,0 +1,8 @@
+tree 7a0bf2280694f0ac3ad103dfb346c06a04648276
+parent 85db013f1c162d02e3005c9a7553c4894f18ec12
+author Ashish Bijlani <ashish.bijlani@gmail.com> 1594509061 -0500
+committer Ashish Bijlani <ashish.bijlani@gmail.com> 1594509061 -0500
+
+Use the correct bpf fuse helper functions
+
+Signed-off-by: Ashish Bijlani <ashish.bijlani@gmail.com>

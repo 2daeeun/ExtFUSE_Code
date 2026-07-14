@@ -1,0 +1,20 @@
+tree 62abb6f715031624ad2d88bba1419f3a6123c708
+parent b7923d63a0e50b1dbbb71b932ab2c9802d18e28a
+parent 2fab85b8c7e01b87911b9da1c2b4de810f7a9e07
+author Ashish Bijlani <ashish.bijlani@gmail.com> 1588359207 -0500
+committer GitHub <noreply@github.com> 1588359207 -0500
+gpgsig -----BEGIN PGP SIGNATURE-----
+ 
+ wsBcBAABCAAQBQJerHAnCRBK7hj4Ov3rIwAAdHIIAGhaOWlkTm5FU9MRcpIpD3Sk
+ 5FPPca4Ih1ciHmpzUmAt8x/2+OwHdh56qAgbiKrJlIN/kIXS5Bfqd6FhlLaCcflH
+ 9jijHQq86867I12R+MmRlloU+dHIdt0P+Cmk8WmokHWaF2Eul8dO6Yz9rrkal2dI
+ 5Eu+0RonYb8+4jMmPbjl+P3+0RYvKc3zNHKKXmbmpfmGlp8FKjxmyw+CyMqPK4hY
+ BjIcSSzRjjPa8ZvGtD1JSGUAnxi5lXz1zgloalSS2DLhUjFNaNhBayM78ywsArF5
+ a0zRAfKB+YHWEg78UPKuC0RwGVKJYXKKdm9L6tULmomTYUzTFyen62yn2VK2yTM=
+ =Qfjo
+ -----END PGP SIGNATURE-----
+ 
+
+Merge pull request #1 from balsini/extfuse-refactor
+
+ExtFUSE minor fixes

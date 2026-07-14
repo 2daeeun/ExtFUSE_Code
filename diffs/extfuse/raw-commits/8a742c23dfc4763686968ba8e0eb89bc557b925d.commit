@@ -1,0 +1,19 @@
+tree 87378c334b265394d18b479728d3cb0ac2d73cfa
+parent 541f9318cd5843423ee838240b9bc1378a378062
+author Ashish Bijlani <ashish.bijlani@gmail.com> 1595696560 -0500
+committer GitHub <noreply@github.com> 1595696560 -0500
+gpgsig -----BEGIN PGP SIGNATURE-----
+ 
+ wsBcBAABCAAQBQJfHGWwCRBK7hj4Ov3rIwAAdHIIAKH+KnAESIhVp15H41CsgIqH
+ r3y2OtsSLv0hGzAvebAtgvaTdbVzln7PFoSttFa2pzldQPkIsAGmfamcjQ8QBIQr
+ tsv5dyXtvgLEoAI2u5veJxjcE3Ml9qJiu2EKXBfvzxl482al0CdmhaFRitvJ2kYN
+ QIs4Z4RYHVDycsxthwM2MPSXySXdgkrdRCmaznwmyd3c8d913+yUoVLs2nH9dSMw
+ owa3GRcjqYds5q9PcyHTVJ0vJpJ417BSyfkVIZhG4nIHw+rIy/DtZ7Sdb3s1AIx8
+ A2Xf2X5G1OiTdJs+t8g/Y9dMx8/7CLQtbcQf9ccmKQFjUE58nz6q4TY2hICnsWc=
+ =M2gW
+ -----END PGP SIGNATURE-----
+ 
+
+Update instructions in README
+
+Fix build instructions in README.

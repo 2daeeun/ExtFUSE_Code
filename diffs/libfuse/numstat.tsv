@@ -1,0 +1,3 @@
+6	1	include/fuse_common.h
+5	1	include/fuse_kernel.h
+16	0	lib/fuse_lowlevel.c

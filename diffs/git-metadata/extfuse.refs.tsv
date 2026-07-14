@@ -1,0 +1,4 @@
+ref	object	object_type	peeled_object	peeled_type	created_at	subject	original_url	commit_url
+refs/heads/master	d2acdb1c8e4531562fc77fe566896e771d03026e	commit			2023-05-02T09:18:49-05:00	Update README.md	https://github.com/extfuse/extfuse/tree/master	https://github.com/extfuse/extfuse/commit/d2acdb1c8e4531562fc77fe566896e771d03026e
+refs/remotes/origin/HEAD	d2acdb1c8e4531562fc77fe566896e771d03026e	commit			2023-05-02T09:18:49-05:00	Update README.md	https://github.com/extfuse/extfuse	https://github.com/extfuse/extfuse/commit/d2acdb1c8e4531562fc77fe566896e771d03026e
+refs/remotes/origin/master	d2acdb1c8e4531562fc77fe566896e771d03026e	commit			2023-05-02T09:18:49-05:00	Update README.md	https://github.com/extfuse/extfuse/tree/master	https://github.com/extfuse/extfuse/commit/d2acdb1c8e4531562fc77fe566896e771d03026e

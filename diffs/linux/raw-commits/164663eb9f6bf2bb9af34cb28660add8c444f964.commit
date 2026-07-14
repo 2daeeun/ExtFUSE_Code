@@ -1,0 +1,13 @@
+tree 557020564bdc965030d1289ccad8f6b66a6f1d36
+parent 80a1aa49bf53f47b56429ccc1bf4a10b42e6c80f
+author Alessio Balsini <balsini@android.com> 1587656651 +0100
+committer Alessio Balsini <balsini@android.com> 1587658140 +0100
+
+ExtFUSE: update fc_priv when BPF program is loaded
+
+When the BPF program is successfully loaded, it gets linked into a
+dynamically allocated data structure that gets actually lost.
+Make use of this data structure by assigning its address to the
+referenced fuse_conn::fc_priv.
+
+Signed-off-by: Alessio Balsini <balsini@android.com>

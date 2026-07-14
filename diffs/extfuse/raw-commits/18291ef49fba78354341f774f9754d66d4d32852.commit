@@ -1,0 +1,19 @@
+tree 88b2ac9d1ee726a6832d5934356615d29cb72579
+parent 233986ff6ef31a44eca1dbdd7de1a971b1104d99
+author Ashish Bijlani <ashish.bijlani@gmail.com> 1599620127 -0500
+committer GitHub <noreply@github.com> 1599620127 -0500
+gpgsig -----BEGIN PGP SIGNATURE-----
+ 
+ wsBcBAABCAAQBQJfWEQfCRBK7hj4Ov3rIwAAdHIIAE362SbVrFM04a97ZmTLI2Ba
+ +tVmQn/KXhNIYuPLC3l4QwqGT6GEbO17elg1GQ8tjsB8pQJJOMTW2/HK/sIzOmv8
+ Rz76UEPRk9Q2SOCaKyYPDmtQjUMeXKkTIpfHUvcN79JgnA6YzykWCcfCHzMwmnL0
+ 2Hh8bfejt2l3AuweT1vcsPyYkUkLppfpPS4bUAZYM4ytquGG2iMV13QbI6rCLLx3
+ CuHEIyeepxheuh8dbmFHYUe8UYdCfekyg+pgTS45z0K4jsE1DrY3IugtQsmYvSHA
+ qTV48oqAxOkEFjEfUi/985N+9EKPtWv9rtZbDdCL+8+qDwLM0BqL8eqyGbVjrTg=
+ =QDJJ
+ -----END PGP SIGNATURE-----
+ 
+
+Update README.md
+
+Fix lib path for StackFS.

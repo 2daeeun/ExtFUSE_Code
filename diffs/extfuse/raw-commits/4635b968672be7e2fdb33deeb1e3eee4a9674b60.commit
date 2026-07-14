@@ -1,0 +1,8 @@
+tree 25cf48518c76ad3fc26797f7a4bbaf4bff6d58fd
+parent 0419beaa40254cda2dbfbd41d711efd2dd8e1006
+author Ashish Bijlani <ashish.bijlani@gatech.edu> 1563064225 -0400
+committer Ashish Bijlani <ashish.bijlani@gatech.edu> 1563064225 -0400
+
+Complete instructions on cloning ExtFUSE kernel
+
+Signed-off-by: Ashish Bijlani <ashish.bijlani@gatech.edu>

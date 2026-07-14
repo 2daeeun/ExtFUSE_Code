@@ -1,0 +1,16 @@
+4	0	Documentation/filesystems/extfuse.txt
+9	0	MAINTAINERS
+11	0	fs/fuse/Kconfig
+1	0	fs/fuse/Makefile
+3	0	fs/fuse/dev.c
+330	0	fs/fuse/extfuse.c
+85	0	fs/fuse/extfuse_i.h
+3	0	fs/fuse/fuse_i.h
+7	1	fs/fuse/inode.c
+3	0	include/linux/bpf_types.h
+4	1	include/uapi/linux/bpf.h
+19	0	include/uapi/linux/extfuse.h
+3	1	include/uapi/linux/fuse.h
+18	0	samples/bpf/bpf_load.c
+4	1	tools/include/uapi/linux/bpf.h
+4	0	tools/testing/selftests/bpf/bpf_helpers.h

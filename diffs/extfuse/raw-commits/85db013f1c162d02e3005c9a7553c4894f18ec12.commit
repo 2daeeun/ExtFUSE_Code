@@ -1,0 +1,8 @@
+tree 6113b27198c73969f349a529f1b79d0934fb6a96
+parent 9a30a391835d7254a3fc1cdac30c9218f2de2f2e
+author Ashish Bijlani <ashish.bijlani@gmail.com> 1594509043 -0500
+committer Ashish Bijlani <ashish.bijlani@gmail.com> 1594509043 -0500
+
+Fix Makefile to use correct paths
+
+Signed-off-by: Ashish Bijlani <ashish.bijlani@gmail.com>

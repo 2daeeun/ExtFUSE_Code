@@ -1,0 +1,4 @@
+status	additions	deletions	path	commits	commit_urls
+M	6	1	include/fuse_common.h	7c88efb9d92d64289795e43b2948977c07ccda7f;f945fbc0b6ba9c9291229f6e209d82168908cc94	https://github.com/extfuse/libfuse/commit/7c88efb9d92d64289795e43b2948977c07ccda7f;https://github.com/extfuse/libfuse/commit/f945fbc0b6ba9c9291229f6e209d82168908cc94
+M	5	1	include/fuse_kernel.h	7c88efb9d92d64289795e43b2948977c07ccda7f;f945fbc0b6ba9c9291229f6e209d82168908cc94;5b381d81f0d2a4a37ca4c73a3c8e5e778138b32d	https://github.com/extfuse/libfuse/commit/7c88efb9d92d64289795e43b2948977c07ccda7f;https://github.com/extfuse/libfuse/commit/f945fbc0b6ba9c9291229f6e209d82168908cc94;https://github.com/extfuse/libfuse/commit/5b381d81f0d2a4a37ca4c73a3c8e5e778138b32d
+M	16	0	lib/fuse_lowlevel.c	7c88efb9d92d64289795e43b2948977c07ccda7f	https://github.com/extfuse/libfuse/commit/7c88efb9d92d64289795e43b2948977c07ccda7f
